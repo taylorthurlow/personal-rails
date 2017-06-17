@@ -27,3 +27,6 @@
 
 # Ignores .fuse_hidden... files
 .fuse_hidden*
+
+config/secrets.yml
+config/database.yml
