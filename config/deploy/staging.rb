@@ -24,9 +24,9 @@ set :deploy_to, "/var/www/html/blog_staging"
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :app, %w{taylor@taylorjthurlow.com}
-role :web, %w{taylor@taylorjthurlow.com}
-role :db,  %w{taylor@taylorjthurlow.com}
+role :app, %w{taylor@staging.taylorjthurlow.com}
+role :web, %w{taylor@staging.taylorjthurlow.com}
+role :db,  %w{taylor@staging.taylorjthurlow.com}
 
 # Configuration
 # =============
