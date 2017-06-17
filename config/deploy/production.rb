@@ -10,7 +10,7 @@
 server 'taylorjthurlow.com', user: 'taylor', roles: %w{app web db}
 set :branch, 'master'
 set :rails_env, 'production'
-set deploy_to, "/var/www/html/blog"
+set :deploy_to, "/var/www/html/blog"
 
 # role-based syntax
 # ==================
