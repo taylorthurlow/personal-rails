@@ -23,7 +23,7 @@
 
 # IDE junk
 .idea
-*.sublime*
+*.sublime-workspace
 
 # Ignores .fuse_hidden... files
 .fuse_hidden*

@@ -21,5 +21,8 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: ../../shared/production.sqlite3
+  adapter: mysql
+  database: blog
+  username: root
+  password: poolsharks8
+  host: localhost
