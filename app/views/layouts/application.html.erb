@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Taylor Thurlow</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        <a href="#"><p>taylor thurlow</p></a>
+      </div>
 
-<%= yield %>
+      <% if is_authenticated? %>
+        <div id="toolbar">
+          <ul>
+            <li><%= link_to '', new_post_url, class: "fa fa-pencil" %></li>
+            <li><%= link_to '', new_post_url, class: "fa fa-history" %></li>
+            <li><%= link_to '', new_post_url, class: "fa fa-cog" %></li>
+            <li><%= link_to '', logout_path, class: "fa fa-sign-out" %></li>
+          </ul>
+        </div>
+      <% end %>
 
-</body>
+      <div id="content">
+        <%= yield %>
+      </div>
+
+      <div id="footer">
+        <p>&copy;<%=Time.now.year%> Taylor Thurlow</p>
+      </div>
+    </div>
+  </body>
 </html>

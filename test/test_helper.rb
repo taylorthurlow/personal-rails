@@ -6,5 +6,11 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def login_as(login)
+    session[:login_id] = logins(login).id
+  end
+
+  def logout
+    session.delete :login_id
+  end
 end

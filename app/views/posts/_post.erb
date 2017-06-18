@@ -1,0 +1,12 @@
+<div class="blog_post">
+  <div class="blog_post_header">
+    <h1 class="blog_post_title"><%= link_to post.title, post_url(post) %></h1>
+    <ul>
+      <li><%= link_to '', edit_post_url(post), class: "fa fa-pencil" %></li>
+      <li><%= link_to '', post_url(post), method: :delete, class: "fa fa-trash" %></li>
+    </ul>
+    <span style="clear: both"></span>
+  </div>
+  <h3><%= post.date_line %></h3>
+  <p><%= post.contents %></p>
+</div>
