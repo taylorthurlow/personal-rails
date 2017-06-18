@@ -4,7 +4,7 @@
     <% if is_authenticated? %>
       <ul>
         <li><%= link_to '', edit_post_url(post), class: "fa fa-pencil" %></li>
-        <li><%= link_to '', post_url(post), method: :delete, class: "fa fa-trash" %></li>
+        <li><%= link_to '', post_url(post), method: :delete, class: "fa fa-trash", data: { confirm: 'Are you sure?' } %></li>
       </ul>
     <% end %>
     <span style="clear: both"></span>
