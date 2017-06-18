@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   validates :contents, presence: true
 
   def generate_markdown_html
-    renderer = Redcarpet::Render::HTML.new(render_options = {})
+    renderer = Redcarpet::Render::HTML.new(render_options = {prettify: true})
     markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true)
     return markdown.render(self.contents)
   end
