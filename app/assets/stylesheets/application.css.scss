@@ -16,12 +16,13 @@
 
 @import "font-awesome";
 
+$background_color: #d3d3d3;
 $primary_color: #1F1F1F;
 $accent_color: #4b0082;
  
 body {
 	color: $primary_color;
-	background-color: #d3d3d3;
+	background-color: $background_color;
 
 	p {
 		font-size: 16px;
@@ -186,4 +187,22 @@ body {
 
 code {
 	white-space: pre-wrap;
+}
+
+p > code.prettyprint.prettyprinted {
+
+	> span.pln {
+		color: $primary_color;
+		background-color: rgb(200, 200, 200);
+		padding: 2px 3px 2px 3px;
+		font-size: 15px;
+	}
+
+	> span.pun {
+		color: $primary_color;
+		background-color: rgb(200, 200, 200);
+		padding: 2px 0px 2px 0px;
+		margin: 0px -4px 0px -4px;
+		font-size: 15px;
+	}
 }
