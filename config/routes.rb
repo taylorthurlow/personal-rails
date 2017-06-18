@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :posts
 
   # root & welcome
-  root 'sessions#new'
+  root 'posts#index'
 
   # sessions
   resources :sessions, only: [:new, :create]
