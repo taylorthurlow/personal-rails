@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc).page(params[:page]).per(4)
   end
 
+  def archive
+    @posts = Post.order(created_at: :desc)
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show

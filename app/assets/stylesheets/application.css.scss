@@ -104,35 +104,34 @@ body {
 		text-indent: 20px;
 	}
 
-	.blog_post_header {
-		height: 50px;
-		margin-bottom: -10px;
+	.blog_post_title {
+		line-height: 30px;
+	}
 
-		.blog_post_title {
+	.blog_post_date_line {
+
+		h3 {
 			float: left;
-			width: 90%;
+			margin-top: 0;
+			margin-bottom: 0;
 		}
+	}
 
-		ul {
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			height: 50px;
-			width: 10%;
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			margin-right: -5px;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		margin-top: -3px;
+		margin-right: 10px;
+		padding: 0;
+		overflow: hidden;
 
-			li {
-				float: right;
+		li {
+			float: right;
 
-				a {
-					display: block;
-					text-align: center;
-					padding: 5px;
-				}
+			a {
+				display: block;
+				text-align: center;
+				padding: 5px;
 			}
 		}
 	}
@@ -157,6 +156,21 @@ body {
 
 .pagination {
 	text-align: center;
+}
+
+#post_archive {
+	width: 100%;
+
+	td {
+		overflow: hidden;
+		max-width: 1px; // Not sure why this works
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	thead td {
+		font-weight: bold;
+	}
 }
 
 .login_form {
