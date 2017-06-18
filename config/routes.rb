@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # static pages
+  get '/contact' => 'static_pages#contact', as: 'contact'
+  get '/projects' => 'static_pages#projects', as: 'projects'
+
   # archive
   controller :posts do
     get '/posts/archive' => 'posts#archive', as: 'archive'

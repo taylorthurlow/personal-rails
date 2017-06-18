@@ -58,9 +58,39 @@ body {
 
 	p {
 		font-size: 24px;
-		line-height: 75px;
-		text-align: right;
 		margin: 0px;
+		line-height: 75px;
+	}
+
+	.header_right {
+		float: right;
+
+		p {
+			text-align: right;
+		}
+	}
+
+	.header_left {
+		float: left;
+
+		ul {
+			font-size: 16px;
+			line-height: 75px;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+
+			li {
+				float: left;
+
+				a {
+					display: block;
+					text-align: center;
+					padding: 5px 20px 5px 20px;
+				}
+			}
+		}
 	}
 }
 
@@ -204,5 +234,19 @@ p > code.prettyprint.prettyprinted {
 		padding: 2px 0px 2px 0px;
 		margin: 0px -4px 0px -4px;
 		font-size: 15px;
+	}
+}
+
+.contact_cell {
+	width: 266px; // 800/3 = 266.6666667
+	height: 150px;
+	float: left;
+	display: block;
+
+	a {
+		display: inline-block;
+		background-color: red;
+		height: 100%;
+		width: 100%;
 	}
 }
