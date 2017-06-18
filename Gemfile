@@ -41,6 +41,7 @@ group :development do
   # Use Capistrano for deployment
   gem 'capistrano', '~> 3.8.2'
   gem 'capistrano-rails', '~> 1.3.0'
+  gem 'capistrano-rails-console', require: false
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'capistrano-ext', '~> 1.2.1'
 
