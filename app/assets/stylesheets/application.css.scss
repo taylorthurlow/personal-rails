@@ -241,16 +241,15 @@ p > code.prettyprint.prettyprinted {
 	}
 }
 
-.contact_cell {
-	width: 266px; // 800/3 = 266.6666667
-	height: 150px;
-	float: left;
-	display: block;
+.contact {
+	display: flex;
+	justify-content: center;
 
-	a {
-		display: inline-block;
-		background-color: red;
-		height: 100%;
-		width: 100%;
+	.contact_cell {
+		width: 266px; // 800/3 = 266.6666667
+		height: 150px;
+		text-align: center;
+		line-height: 150px;
+		font-size: 20px;
 	}
 }
