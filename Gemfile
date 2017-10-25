@@ -54,6 +54,7 @@ group :development do
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'capistrano-ext', '~> 1.2.1'
+  gem 'capistrano-passenger'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
