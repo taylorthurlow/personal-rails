@@ -19,7 +19,7 @@
 $background_color: #d3d3d3;
 $primary_color: #1F1F1F;
 $accent_color: #4b0082;
- 
+
 body {
 	color: $primary_color;
 	background-color: $background_color;
@@ -124,6 +124,10 @@ body {
 		margin: 0px;
 		color: grey;
 	}
+
+	a {
+		color: inherit;
+	}
 }
 
 .blog_post {
@@ -169,7 +173,7 @@ body {
 
 	.blog_post_contents {
 		h1 { font-size: 20px; }
-		
+
 		h2 { font-size: 18px; }
 
 		h3 {
