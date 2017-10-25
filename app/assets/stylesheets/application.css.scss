@@ -253,3 +253,9 @@ p > code.prettyprint.prettyprinted {
 		font-size: 20px;
 	}
 }
+
+.monospace {
+	textarea {
+		font-family: monospace;
+	}
+}
