@@ -1,64 +1,34 @@
 class LoginsController < ApplicationController
-  before_action :set_login, only: [:show, :edit, :update, :destroy]
+  before_action :set_login, only: [:edit, :update, :destroy]
+  respond_to :html
+  responders :flash
 
-  # GET /logins
-  # GET /logins.json
   def index
     @logins = Login.all
+    respond_with @logins
   end
 
-  # GET /logins/1
-  # GET /logins/1.json
-  def show
-  end
-
-  # GET /logins/new
   def new
     @login = Login.new
   end
 
-  # GET /logins/1/edit
   def edit
   end
 
-  # POST /logins
-  # POST /logins.json
   def create
     @login = Login.new(login_params)
-
-    respond_to do |format|
-      if @login.save
-        format.html { redirect_to posts_path, notice: 'Login was successfully created.' }
-        format.json { render :show, status: :created, location: @login }
-      else
-        format.html { render :new }
-        format.json { render json: @login.errors, status: :unprocessable_entity }
-      end
-    end
+    @login.save
+    respond_with @login, location: posts_url
   end
 
-  # PATCH/PUT /logins/1
-  # PATCH/PUT /logins/1.json
   def update
-    respond_to do |format|
-      if @login.update(login_params)
-        format.html { redirect_to @login, notice: 'Login was successfully updated.' }
-        format.json { render :show, status: :ok, location: @login }
-      else
-        format.html { render :edit }
-        format.json { render json: @login.errors, status: :unprocessable_entity }
-      end
-    end
+    @login.update(login_params)
+    respond_with @login
   end
 
-  # DELETE /logins/1
-  # DELETE /logins/1.json
   def destroy
     @login.destroy
-    respond_to do |format|
-      format.html { redirect_to logins_url, notice: 'Login was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with @login
   end
 
   private

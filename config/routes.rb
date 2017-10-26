@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get 'logout' => :destroy, as: 'logout'
   end
 
-  resources :logins
+  resources :logins, except: [:show]
   resources :posts
 
   # root & welcome

@@ -36,6 +36,8 @@ gem 'redcarpet'
 # pagination
 gem 'kaminari'
 
+gem 'responders'
+
 group :production do
   gem 'mysql'
 end

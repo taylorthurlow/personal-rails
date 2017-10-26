@@ -25,11 +25,6 @@ class LoginsControllerTest < ActionController::TestCase
     assert_redirected_to posts_path
   end
 
-  test "should show login" do
-    get :show, id: @login
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @login
     assert_response :success
