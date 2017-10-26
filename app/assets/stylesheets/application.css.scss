@@ -225,7 +225,7 @@ code {
 
 p > code.prettyprint.prettyprinted {
 
-	> span.pln {
+	> span.pln, span.typ, span.lit {
 		color: $primary_color;
 		background-color: rgb(200, 200, 200);
 		padding: 2px 3px 2px 3px;
