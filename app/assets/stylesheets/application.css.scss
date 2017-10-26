@@ -232,12 +232,18 @@ p > code.prettyprint.prettyprinted {
 		font-size: 15px;
 	}
 
-	> span.pun {
+	> span.pun { // punctuation
 		color: $primary_color;
 		background-color: rgb(200, 200, 200);
 		padding: 2px 0px 2px 0px;
 		margin: 0px -4px 0px -4px;
 		font-size: 15px;
+	}
+}
+
+code.prettyprint.prettyprinted {
+	> span {
+		font-size: 14px;
 	}
 }
 
