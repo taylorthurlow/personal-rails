@@ -1,7 +1,7 @@
 <div class="blog_post">
   <h1 class="blog_post_title"><%= link_to post.title, post_url(post) %></h1>
   <div class="blog_post_date_line"><h3><%= post.date_line %></h3></div>
-  <% if is_authenticated? %>
+  <% if authenticated? %>
     <ul>
       <li><%= link_to '', edit_post_url(post), class: "fa fa-pencil" %></li>
       <li><%= link_to '', post_url(post), method: :delete, class: "fa fa-trash", data: { confirm: 'Are you sure?' } %></li>

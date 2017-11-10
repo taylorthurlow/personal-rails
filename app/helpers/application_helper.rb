@@ -2,17 +2,11 @@ module ApplicationHelper
   include ActionView::Helpers::NumberHelper
 
   def current_user
-    if session[:login_id]
-      return Login.find(session[:login_id])
-    end
+    return Login.find(session[:login_id]) if session[:login_id]
     return nil
   end
 
-  def is_authenticated?
-    if not session[:login_id].blank? and Login.where(id: session[:login_id]).any?
-      return true
-    end
-    return false
+  def authenticated?
+    return !session[:login_id].blank? && Login.where(id: session[:login_id]).any?
   end
-
 end

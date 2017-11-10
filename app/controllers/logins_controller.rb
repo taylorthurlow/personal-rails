@@ -1,19 +1,6 @@
 class LoginsController < ApplicationController
-  before_action :set_login, only: [:edit, :update, :destroy]
+  before_action :set_login, only: [:update, :destroy]
   respond_to :html
-  responders :flash
-
-  def index
-    @logins = Login.all
-    respond_with @logins
-  end
-
-  def new
-    @login = Login.new
-  end
-
-  def edit
-  end
 
   def create
     @login = Login.new(login_params)
@@ -32,13 +19,14 @@ class LoginsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_login
-      @login = Login.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def login_params
-      params.require(:login).permit(:username, :password, :password_confirmation)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_login
+    @login = Login.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def login_params
+    params.require(:login).permit(:username, :password, :password_confirmation)
+  end
 end

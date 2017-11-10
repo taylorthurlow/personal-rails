@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <% if is_authenticated? %>
+      <% if authenticated? %>
         <div id="toolbar">
           <ul>
             <li><%= link_to '', new_post_url, class: "fa fa-pencil" %></li>
