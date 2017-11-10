@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617221758) do
+ActiveRecord::Schema.define(version: 20171110042825) do
 
   create_table "logins", force: :cascade do |t|
     t.string   "username"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170617221758) do
     t.text     "contents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "tag_line"
   end
 
 end

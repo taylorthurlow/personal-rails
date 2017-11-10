@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   responders :flash
 
   def index
-    @posts = Post.order(created_at: :desc).page(params[:page]).per(4)
+    @posts = Post.order(created_at: :desc).page(params[:page]).per(10)
     respond_with @posts
   end
 
@@ -48,6 +48,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :contents)
+      params.require(:post).permit(:title, :tag_line, :contents)
     end
 end

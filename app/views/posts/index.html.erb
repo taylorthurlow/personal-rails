@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <% @posts.each do |post| %>
-  <%= render 'post', post: post %>
-  <% unless post == @posts.last %>
-    <br /><hr><br />
-  <% end %>
+
+  <h2 class="blog_index_title"><%= link_to post.title, post_url(post) %></h2>
+  <div class="blog_index_date_line"><p><%= post.date_line %></p></div>
+  <div class="blog_index_tag_line"><p><%= post.tag_line %></p></div><br />
+
 <% end %>
 
 <div class="pagination">
