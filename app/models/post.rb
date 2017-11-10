@@ -1,7 +1,11 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   # validation
-  validates :title, presence: true
-  validates :contents, presence: true
+  validates :title, :contents, :slug, presence: true
+  validates :slug, uniqueness: true
+  validates_format_of :slug, with: /\A[a-z0-9]+\z/i
 
   def generate_markdown_html
     renderer = Redcarpet::Render::HTML.new(render_options = {prettify: true})
