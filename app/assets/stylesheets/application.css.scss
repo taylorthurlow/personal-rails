@@ -24,7 +24,7 @@ body {
 	color: $primary_color;
 	background-color: $background_color;
 
-	p {
+	p, ul, li {
 		font-size: 16px;
 		line-height: 24px;
 	}
@@ -137,6 +137,14 @@ body {
 
 	p {
 		text-indent: 20px;
+
+		a {
+			color: $accent_color;
+
+			&:visited {
+				color: $accent_color;
+			}
+		}
 	}
 
 	.blog_post_title {
@@ -152,7 +160,7 @@ body {
 		}
 	}
 
-	ul {
+	> ul {
 		list-style-type: none;
 		margin: 0;
 		margin-top: -3px;
@@ -219,31 +227,22 @@ body {
 	}
 }
 
-code {
+// should match all ~~~~ code blocks
+pre > code.prettyprint.prettyprinted {
 	white-space: pre-wrap;
+	font-size: 14px;
 }
 
-p > code.prettyprint.prettyprinted {
+// should match all `` inline code
+p > code.prettyprint.prettyprinted, li > code.prettyprint.prettyprinted {
+	padding: 0px 1px;
+	background-color: rgb(200, 200, 200);
 
-	> span.pln, span.typ, span.lit {
+	> span.pln, > span.pun, > span.kwd, > span.typ, > span.lit, > span.str {
 		color: $primary_color;
-		background-color: rgb(200, 200, 200);
-		padding: 2px 3px 2px 3px;
+		padding: 2px 0px;
+		margin: 0px;
 		font-size: 15px;
-	}
-
-	> span.pun { // punctuation
-		color: $primary_color;
-		background-color: rgb(200, 200, 200);
-		padding: 2px 0px 2px 0px;
-		margin: 0px -4px 0px -4px;
-		font-size: 15px;
-	}
-}
-
-code.prettyprint.prettyprinted {
-	> span {
-		font-size: 14px;
 	}
 }
 
