@@ -23,6 +23,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'                               # better error pages
   gem 'capistrano', '~> 3.8.2'                      # Use Capistrano for deployment
   gem 'capistrano-ext', '~> 1.2.1'
   gem 'capistrano-passenger'
