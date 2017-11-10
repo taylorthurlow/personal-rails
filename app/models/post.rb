@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   # validation
   validates :title, :contents, :slug, presence: true
   validates :slug, uniqueness: true
-  validates_format_of :slug, with: /\A[a-z0-9]+\z/i
+  validates_format_of :slug, with: /[a-z0-9-]+/i
 
   def generate_markdown_html
     renderer = Redcarpet::Render::HTML.new(render_options = {prettify: true})
