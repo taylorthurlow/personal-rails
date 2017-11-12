@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     session[:login_id] = nil
 
     login = Login.find_by(username: params[:username].strip)
-    if login && login.authenticate(params[:password].strip)
+    if login&.authenticate(params[:password].strip)
       session[:login_id] = login.id
       redirect_to posts_url
     else
