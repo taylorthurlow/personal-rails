@@ -13,15 +13,6 @@ gem 'sass-rails', '~> 5.0'        # Use SCSS for stylesheets
 gem 'turbolinks'                  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'uglifier', '>= 1.3.0'        # Use Uglifier as compressor for JavaScript assets
 
-group :production do
-  gem 'mysql'                     # use mySQL in production instead of SQLite
-end
-
-group :development, :test do
-  gem 'byebug'                    # debugger
-  gem 'sqlite3'                   # Use sqlite3 as the database for Active Record
-end
-
 group :development do
   gem 'better_errors'                               # better error pages
   gem 'capistrano', '~> 3.8.2'                      # Use Capistrano for deployment
@@ -33,4 +24,17 @@ group :development do
   gem 'rubocop'
   gem 'spring'                                      # speeds up development by keeping your application running in the background
   gem 'web-console', '~> 2.0'                       # Access an IRB console on exception pages or by using <%= console %> in views
+end
+
+group :test do
+  gem 'simplecov', require: false                   # generate test coverage reports
+end
+
+group :development, :test do
+  gem 'byebug'                    # debugger
+  gem 'sqlite3'                   # Use sqlite3 as the database for Active Record
+end
+
+group :production do
+  gem 'mysql'                     # use mySQL in production instead of SQLite
 end
