@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
 
   def create
     session[:login_id] = nil
-
     login = Login.find_by(username: params[:username].strip)
     if login&.authenticate(params[:password].strip)
       session[:login_id] = login.id

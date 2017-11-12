@@ -1,16 +1,25 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
+guard 'livereload' do
+  watch(%r{app/views/(.*)\//.+\.(erb|haml|slim)$})
+  watch(%r{app/helpers/(.*)\//.+\.rb})
+  watch(%r{public/.+\.(css|js|html)})
+  watch(%r{test/.+\.(js)})
+  watch(%r{config/locales/.+\.yml})
+  # Rails Assets Pipeline
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
+end
 
-## Uncomment and set this to only include directories you want to watch
-# directories %w(app lib config test spec features) \
-#  .select{|d| Dir.exists?(d) ? d : UI.warning("Directory #{d} does not exist")}
+guard :minitest, all_on_start: false, env: { 'NO_COVERAGE' => 'true' } do
+  watch(%r{^app/controllers/application_controller\.rb$}) { 'test/controllers' }
+  watch(%r{^lib/(.+)\.rb$}) { |m| "test/lib/#{m[1]}_test.rb" }
+  watch(%r{^test/.+_test\.rb$})
+  watch(%r{^test/test_helper\.rb$}) { 'test' }
+  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
+  watch(%r{^lib/(.*/)?([^/]+)\.rb$}) { |m| "test/#{m[1]}test_#{m[2]}.rb" }
 
-## Note: if you are using the `directories` clause above and you are not
-## watching the project directory ('.'), then you will want to move
-## the Guardfile to a watched dir and symlink it back, e.g.
-#
-#  $ mkdir config
-#  $ mv Guardfile config/
-#  $ ln -s config/Guardfile .
-#
-# and, you'll have to watch "config/Guardfile" instead of "Guardfile"
+  # Rails 4
+  watch(%r{^app/controllers/(.+)\.rb}) { |m| "test/controllers/#{m[1]}_test.rb" }
+  watch(%r{^app/services/(.+)\.rb}) { |m| "test/services/#{m[1]}_test.rb" }
+  watch(%r{^app/jobs/(.+)\.rb}) { |m| "test/jobs/#{m[1]}_test.rb" }
+  watch(%r{^app/views/(.+)\.rb}) { |m| "test/controllers/#{m[1]}_test.rb" }
+  watch(%r{^app/models/(.+)\.rb}) { |m| "test/models/#{m[1]}_test.rb" }
+end

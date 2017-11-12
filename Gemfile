@@ -27,11 +27,15 @@ group :development do
 end
 
 group :test do
+  gem 'mocha'
   gem 'simplecov', require: false                   # generate test coverage reports
 end
 
 group :development, :test do
   gem 'byebug'                    # debugger
+  gem 'guard'                     # Make tests auto-run when changing files
+  gem 'guard-livereload', '2.3.0', require: false
+  gem 'guard-minitest'
   gem 'sqlite3'                   # Use sqlite3 as the database for Active Record
 end
 
