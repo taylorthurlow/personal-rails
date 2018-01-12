@@ -20,6 +20,8 @@ $background_color: #d3d3d3;
 $primary_color: #1F1F1F;
 $accent_color: #4b0082;
 
+$break_mobile: 850px;
+
 body {
 	color: $primary_color;
 	background-color: $background_color;
@@ -27,6 +29,18 @@ body {
 	p, ul, li {
 		font-size: 16px;
 		line-height: 24px;
+	}
+
+	h1 {
+		font-size: 1.75em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	h3 {
+		font-size: 1em;
 	}
 
 	a {
@@ -47,14 +61,32 @@ body {
 	}
 }
 
+#notice {
+	@media (max-width: $break_mobile) {
+		text-align: center;
+	}
+}
+
 .container {
-	margin: 0 auto;
-	width: 800px;
+	@media (max-width: $break_mobile) {
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	@media (min-width: $break_mobile) {
+		margin: 0 auto;
+		width: 800px;
+	}
 }
 
 #header {
-	height: 75px;
+	display: flex;
 	margin-bottom: 25px;
+	flex-direction: row;
+
+	@media (max-width: $break_mobile) {
+		flex-direction: column;
+	}
 
 	p {
 		font-size: 24px;
@@ -63,21 +95,32 @@ body {
 	}
 
 	.header_right {
-		float: right;
+		flex-grow: 0.5;
+		font-size: 2em;
 
-		p {
-			text-align: right;
+		@media (min-width: $break_mobile) {
+			line-height: 75px;
+		}
+
+		@media (max-width: $break_mobile) {
+			margin: 1em 0;
+			text-align: center;
+			font-size: 3em;
 		}
 	}
 
 	.header_left {
-		float: left;
-		height: 100%;
+		@media (min-width: $break_mobile) {
+			line-height: 75px;
+			margin-left: auto;
+		}
+
+		@media (max-width: $break_mobile) {
+			margin: 0 auto;
+		}
 
 		ul {
 			height: 100%;
-			font-size: 16px;
-			line-height: 75px;
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
@@ -88,6 +131,11 @@ body {
 				float: left;
 				display: flex;
 				align-items: center;
+				font-size: 1.5em;
+
+				@media (max-width: $break_mobile) {
+					font-size: 1em;
+				}
 
 				a {
 					text-align: center;
@@ -176,9 +224,12 @@ body {
 	.blog_post_date_line {
 
 		h3 {
-			float: left;
 			margin-top: 0;
 			margin-bottom: 0;
+
+			@media (max-width: $break_mobile) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 
@@ -250,9 +301,13 @@ body {
 }
 
 // should match all ~~~~ code blocks
-pre > code.prettyprint.prettyprinted {
-	white-space: pre-wrap;
-	font-size: 14px;
+pre {
+	overflow: scroll;
+
+	> code.prettyprint.prettyprinted {
+		white-space: no-wrap;
+		font-size: 14px;
+	}
 }
 
 // should match all `` inline code
