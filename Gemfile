@@ -20,7 +20,7 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-rails', '~> 1.3.0'
   gem 'capistrano-rails-console', require: false
-  gem 'capistrano-rvm', '~> 0.1.2'
+  gem 'capistrano-rbenv'
   gem 'rubocop'
   gem 'spring'                                      # speeds up development by keeping your application running in the background
   gem 'web-console', '~> 2.0'                       # Access an IRB console on exception pages or by using <%= console %> in views

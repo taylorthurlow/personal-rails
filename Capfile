@@ -6,7 +6,7 @@ require 'capistrano/deploy'
 
 # Include capistrano-rails
 require 'capistrano/rails'
-require 'capistrano/rvm'
+require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/console'
 
