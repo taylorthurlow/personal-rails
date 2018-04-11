@@ -28,7 +28,6 @@ class PostsControllerTest < ActionController::TestCase
       post :create, post: {
         contents: @post.contents,
         title: @post.title,
-        tag_line: @post.tag_line,
         slug: 'new-slug'
       }
     end
@@ -50,7 +49,6 @@ class PostsControllerTest < ActionController::TestCase
     patch :update, id: @post, post: {
       contents: @post.contents,
       title: @post.title,
-      tag_line: @post.tag_line,
       slug: @post.slug
     }
     assert_redirected_to post_path(assigns(:post))

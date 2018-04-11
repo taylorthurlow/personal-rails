@@ -5,7 +5,6 @@ class PostTest < ActiveSupport::TestCase
     post = Post.create!(
       title: 'some title',
       slug: 'some-slug',
-      tag_line: 'some tag line',
       contents: 'lorem ipsum blah blah blah'
     )
 
