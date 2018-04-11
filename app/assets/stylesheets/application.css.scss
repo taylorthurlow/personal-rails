@@ -15,330 +15,311 @@
  */
 
 @import "font-awesome";
+@import "fonts";
 
-$background_color: #d3d3d3;
-$primary_color: #1F1F1F;
+$background_color: #ffffff;
+$background_color_alt: #f5f5f5;
+$muted_text_color: #5b5e6d;
+$primary_color: #323648;
 $accent_color: #4b0082;
+
+$max_page_width: 1400px;
 
 $break_mobile: 850px;
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-	color: $primary_color;
-	background-color: $background_color;
+  color: $primary_color;
+  background-color: $background_color;
+  margin: 0;
+  font-family: 'Aller';
 
-	p, ul, li {
-		font-size: 16px;
-		line-height: 24px;
-	}
+  p, ul, li {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
 
-	h1 {
-		font-size: 1.75em;
-	}
+  h1, h2, h3, h4 {
+    font-family: "Serif Beta";
+    font-weight: bold;
+    line-height: 100%;
+    margin: 0;
+  }
 
-	h2 {
-		font-size: 1.5em;
-	}
+  h1 {
+    font-size: 4em;
+  }
 
-	h3 {
-		font-size: 1em;
-	}
+  h2 {
+    font-size: 2.5em;
+  }
 
-	a {
-		text-decoration: none;
+  h3 {
+    font-size: 1em;
+  }
 
-		&:visited {
-			color: $primary_color;
-		}
+  a {
+    text-decoration: none;
+    color: $primary_color;
 
-		&:hover {
-			background-color: transparent;
-			color: $accent_color;
-		}
-	}
+    &:visited {
+      color: $primary_color;
+    }
 
-	input, textarea {
-		padding: 5px;
-	}
+    &:hover {
+      background-color: transparent;
+      color: $primary_color;
+    }
+  }
+
+  input, textarea {
+    padding: 5px;
+  }
 }
 
 #notice {
-	@media (max-width: $break_mobile) {
-		text-align: center;
-	}
+  @media (max-width: $break_mobile) {
+    text-align: center;
+  }
 }
 
 .container {
-	@media (max-width: $break_mobile) {
-		margin: 0 auto;
-		width: 90%;
-	}
-
-	@media (min-width: $break_mobile) {
-		margin: 0 auto;
-		width: 800px;
-	}
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
 }
 
-#header {
-	display: flex;
-	margin-bottom: 25px;
-	flex-direction: row;
+#header-wrapper {
+  width: 100%;
+  background-color: $background_color_alt;
 
-	@media (max-width: $break_mobile) {
-		flex-direction: column;
-	}
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-	p {
-		font-size: 24px;
-		margin: 0px;
-		line-height: 75px;
-	}
+    max-width: $max_page_width;
+    min-height: inherit;
+    margin: 0 auto;
+    padding: 75px 50px;
+    text-align: center;
 
-	.header_right {
-		flex-grow: 0.5;
-		font-size: 2em;
-
-		@media (min-width: $break_mobile) {
-			line-height: 75px;
-		}
-
-		@media (max-width: $break_mobile) {
-			margin: 1em 0;
-			text-align: center;
-			font-size: 3em;
-		}
-	}
-
-	.header_left {
-		@media (min-width: $break_mobile) {
-			line-height: 75px;
-			margin-left: auto;
-		}
-
-		@media (max-width: $break_mobile) {
-			margin: 0 auto;
-		}
-
-		ul {
-			height: 100%;
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-
-			li {
-				height: 100%;
-				float: left;
-				display: flex;
-				align-items: center;
-				font-size: 1.5em;
-
-				@media (max-width: $break_mobile) {
-					font-size: 1em;
-				}
-
-				a {
-					text-align: center;
-					padding: 5px 20px 5px 20px;
-				}
-			}
-		}
-	}
+    h1 { line-height: 110%; }
+  }
 }
 
-#toolbar {
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		margin-right: -5px;
+#content-wrapper {
+  width: 100%;
+  flex: 1;
 
-		li {
-			float: right;
-
-			a {
-				display: block;
-				text-align: center;
-				padding: 5px;
-			}
-		}
-	}
+  #content {
+    max-width: $max_page_width;
+    margin: 0 auto;
+    padding: 50px;
+  }
 }
 
-#footer {
-	height: 75px;
-	margin-top: 25px;
+#footer-wrapper {
+  width: 100%;
 
-	p {
-		font-size: 14px;
-		line-height: 75px;
-		margin: 0px;
-		color: grey;
-	}
+  #footer {
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+    width: 100%;
+    background-color: $background_color_alt;
+    color: darken($background_color_alt, 32);
 
-	a {
-		color: inherit;
-	}
+    p {
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      font-size: 1em;
+      line-height: 50px;
+    }
+
+    a { color: inherit; }
+
+    a.fa { padding: 0px 10px; }
+  }
 }
 
-.blog_index_title {
-	margin: 8px 0;
-}
+.blog_entries {
+  .blog_entry {
+    &_title {
+    }
 
-.blog_index_date_line {
-	p {
-		margin: 0px;
-		font-size: 12px;
-	}
-}
+    &_date_line {
+      p {
+        color: $muted_text_color;
+        margin: 15px;
+      }
+    }
 
-.blog_index_tag_line {
-	p {
-		margin: 0px;
-		font-size: 12px;
-	}
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
 }
 
 .blog_post {
-	h3 {
-		font-weight: normal;
-	}
+  &_return_link {
+    text-align: center;
+  }
 
-	p {
-		text-indent: 20px;
+  &_date_line {
+    text-align: center;
 
-		a {
-			color: $accent_color;
+    p {
+      font-size: 1em;
+      color: $muted_text_color;
+      margin: 0 0 50px 0;
+    }
+  }
 
-			&:visited {
-				color: $accent_color;
-			}
-		}
-	}
+  &_contents {
+    pre {
+      background-color: #222;
+      border-radius: 2px;
+      overflow-x: auto;
+      padding: 20px;
 
-	.blog_post_title {
-		line-height: 30px;
-	}
+      code.prettyprint {
+        font-size: 1.25em;
+      }
+    }
 
-	.blog_post_date_line {
+    code.prettyprint:not([class*='lang']) {
+      background-color: darken($background_color_alt, 8);
+      border-radius: 2px;
+      padding: 3px 5px;
 
-		h3 {
-			margin-top: 0;
-			margin-bottom: 0;
+      > span {
+        font-size: .9em;
+        color: $primary_color;
+      }
+    }
 
-			@media (max-width: $break_mobile) {
-				margin-bottom: 20px;
-			}
-		}
-	}
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+    }
+  }
 
-	> ul {
-		list-style-type: none;
-		margin: 0;
-		margin-top: -3px;
-		margin-right: 10px;
-		padding: 0;
-		overflow: hidden;
+  > ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: -3px;
+    margin-right: 10px;
+    padding: 0;
+    overflow: hidden;
 
-		li {
-			float: right;
+    li {
+      float: right;
 
-			a {
-				display: block;
-				text-align: center;
-				padding: 5px;
-			}
-		}
-	}
-
-	.blog_post_contents {
-		h1 { font-size: 20px; }
-
-		h2 { font-size: 18px; }
-
-		h3 {
-			font-size: 16px;
-			font-weight: bold;
-		}
-
-		img {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			max-width: 100%;
-		}
-	}
+      a {
+        display: block;
+        text-align: center;
+        padding: 5px;
+      }
+    }
+  }
 }
 
 .pagination {
-	text-align: center;
+  text-align: center;
 }
 
 #post_archive {
-	width: 100%;
+  border-collapse: collapse;
 
-	td {
-		overflow: hidden;
-		max-width: 1px; // Not sure why this works
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px;
+    // border: 1px solid black;
+  }
 
-	thead td {
-		font-weight: bold;
-	}
+  thead td {
+    font-weight: bold;
+  }
 }
 
 .login_form {
+  text-align: center;
 
-	.input {
-		padding: 10px 0px 10px 0px;
-	}
+  .input {
+    padding: 10px 0px 10px 0px;
 
-	.nm {
-		width: 100px;
-	}
+    input {
+      font-size: 1em;
+      border: 2px solid lighten($muted_text_color, 32);
+      border-radius: 3px;
+
+      &[type=text], &[type=password] {
+        padding: 10px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &[type=submit] {
+        background-color: darken($background_color_alt, 4);
+        padding: 5px 10px;
+      }
+    }
+  }
 }
 
-// should match all ~~~~ code blocks
-pre {
-	overflow: scroll;
+// // should match all ~~~~ code blocks
+// pre {
+//   overflow: scroll;
 
-	> code.prettyprint.prettyprinted {
-		white-space: no-wrap;
-		font-size: 14px;
-	}
-}
+//   > code.prettyprint.prettyprinted {
+//     white-space: no-wrap;
+//     font-size: 14px;
+//   }
+// }
 
-// should match all `` inline code
-p > code.prettyprint.prettyprinted, li > code.prettyprint.prettyprinted {
-	padding: 0px 1px;
-	background-color: rgb(200, 200, 200);
+// // should match all `` inline code
+// p > code.prettyprint.prettyprinted, li > code.prettyprint.prettyprinted {
+//   padding: 0px 1px;
+//   background-color: rgb(200, 200, 200);
 
-	> span.pln, > span.pun, > span.kwd, > span.typ, > span.lit, > span.str {
-		color: $primary_color;
-		padding: 2px 0px;
-		margin: 0px;
-		font-size: 15px;
-	}
-}
+//   > span.pln, > span.pun, > span.kwd, > span.typ, > span.lit, > span.str {
+//     color: $primary_color;
+//     padding: 2px 0px;
+//     margin: 0px;
+//     font-size: 15px;
+//   }
+// }
 
-.contact {
-	display: flex;
-	justify-content: center;
+// .contact {
+//   display: flex;
+//   justify-content: center;
 
-	.contact_cell {
-		width: 266px; // 800/3 = 266.6666667
-		height: 150px;
-		text-align: center;
-		line-height: 150px;
-		font-size: 20px;
-	}
-}
+//   .contact_cell {
+//     width: 266px; // 800/3 = 266.6666667
+//     height: 150px;
+//     text-align: center;
+//     line-height: 150px;
+//     font-size: 20px;
+//   }
+// }
 
-.monospace {
-	textarea {
-		font-family: monospace;
-	}
-}
+// .monospace {
+//   textarea {
+//     font-family: monospace;
+//   }
+// }

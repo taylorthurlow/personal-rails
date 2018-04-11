@@ -14,9 +14,9 @@ class Post < ActiveRecord::Base
   end
 
   def date_line
-    line = 'posted ' + created_at.localtime.strftime('%b %e %Y @ %l:%M %p')
+    line = 'posted ' + created_at.localtime.strftime('%b %e %Y')
     if created_at != updated_at
-      line += ', updated ' + updated_at.localtime.strftime('%b %e %Y @ %l:%M %p')
+      line += ', updated ' + updated_at.localtime.strftime('%b %e %Y')
     end
     return line
   end
