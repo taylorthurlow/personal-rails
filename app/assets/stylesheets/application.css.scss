@@ -275,6 +275,36 @@ body {
   }
 }
 
+.portfolio {
+  &-entry {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 100px;
+    }
+
+    &-thumbnail {
+      width: 720px;
+
+      img {
+        box-shadow: 0 0 3px black;
+        max-width: 100%;
+        border-radius: 3px;
+      }
+    }
+
+    &-text {
+      flex-basis: 70%;
+      font-size: 1em;
+      margin: 20px 0 0 40px;
+
+      p {
+        margin: 20px 0 0 0 ;
+      }
+    }
+  }
+}
+
 .pagination {
   text-align: center;
 }
