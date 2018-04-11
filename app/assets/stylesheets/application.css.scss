@@ -39,7 +39,7 @@ body {
   margin: 0;
   font-family: 'Aller';
 
-  p, ul, li {
+  p, li {
     font-size: 1.5em;
     line-height: 1.5em;
   }
@@ -193,6 +193,12 @@ body {
 
       code.prettyprint {
         font-size: 1.25em;
+      }
+
+      code.prettyprint[class*='lang-plain'] {
+        > span {
+          color: #c5c8c6;
+        }
       }
     }
 
