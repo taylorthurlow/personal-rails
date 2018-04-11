@@ -118,6 +118,7 @@ body {
 
   #header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -128,6 +129,14 @@ body {
     text-align: center;
 
     h1 { line-height: 110%; }
+
+    &-social {
+      margin-top: 30px;
+
+      a {
+        margin: 0px 10px;
+      }
+    }
   }
 }
 

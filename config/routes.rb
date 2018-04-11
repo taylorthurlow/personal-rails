@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
 
   # static pages
-  get '/contact' => 'static_pages#contact', as: 'contact'
-  get '/projects' => 'static_pages#projects', as: 'projects'
+  controller :static_pages do
+    get 'portfolio'
+  end
 
   # archive
+  resources :posts
   controller :posts do
-    get '/posts/archive' => 'posts#archive', as: 'archive'
+    get 'posts/archive', as: 'archive'
   end
 
   # sessions
   resources :sessions, only: [:new, :create]
   controller :sessions do
-    get 'logout' => :destroy, as: 'logout'
+    get 'destroy', as: 'logout'
   end
 
   resources :logins, except: [:show]
-  resources :posts
 
-  # root & welcome
+  # root
   root 'posts#index'
-
 end
