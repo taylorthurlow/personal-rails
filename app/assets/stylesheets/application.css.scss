@@ -139,6 +139,11 @@ body {
     max-width: $max_page_width;
     margin: 0 auto;
     padding: 50px;
+
+    @media (max-width: $break_mobile) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }
 
