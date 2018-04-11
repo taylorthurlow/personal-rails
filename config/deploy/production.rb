@@ -13,6 +13,8 @@ set :rails_env, 'production'
 set :rbenv_ruby, '2.3.1'
 set :deploy_to, "/var/www/html/blog"
 
+set :sitemap_roles, :web
+
 # role-based syntax
 # ==================
 

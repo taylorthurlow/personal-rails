@@ -13,6 +13,8 @@ require 'capistrano/rails/console'
 # Include passenger
 require 'capistrano/passenger'
 
+require 'capistrano/sitemap_generator'
+
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"

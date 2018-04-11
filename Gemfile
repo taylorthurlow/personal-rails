@@ -10,6 +10,7 @@ gem 'rails', '4.2.6'              # Bundle edge Rails instead: gem 'rails', gith
 gem 'redcarpet'                   # markdown
 gem 'responders'                  # DRYer controller responses
 gem 'sass-rails', '~> 5.0'        # Use SCSS for stylesheets
+gem 'sitemap_generator'           # sitemap for SEO
 gem 'turbolinks'                  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'uglifier', '>= 1.3.0'        # Use Uglifier as compressor for JavaScript assets
 
