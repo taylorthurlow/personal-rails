@@ -279,15 +279,21 @@ body {
   &-entry {
     display: flex;
 
+    @media (max-width: $break_mobile) {
+      flex-direction: column;
+    }
+
     &:not(:last-child) {
       margin-bottom: 100px;
     }
 
     &-thumbnail {
-      width: 720px;
+      // width: 720px;
+      width: 100%;
 
       img {
         box-shadow: 0 0 3px black;
+        width: 100%;
         max-width: 100%;
         border-radius: 3px;
       }
@@ -296,10 +302,15 @@ body {
     &-text {
       flex-basis: 70%;
       font-size: 1em;
+
       margin: 20px 0 0 40px;
 
       p {
         margin: 20px 0 0 0 ;
+      }
+
+      @media (max-width: $break_mobile) {
+        margin: 30px 0 0 0 ;
       }
     }
   }
