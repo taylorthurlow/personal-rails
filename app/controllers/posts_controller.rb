@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def markdown
-    content = request.body.string
+    content = request.body.read
 
     renderer = Redcarpet::Render::HTML.new(prettify: true)
     markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true)
