@@ -15,6 +15,11 @@
     <%= f.text_field :title, placeholder: 'title' %>
   </div>
 
+  <div class="field">
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
+
   <% if @post.new_record? %>
     <div class="field">
       <%= f.text_field :slug, placeholder: 'slug' %>

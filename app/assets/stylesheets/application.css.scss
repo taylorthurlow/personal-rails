@@ -362,6 +362,11 @@ input, textarea, button {
     &:focus { outline: none; }
   }
 
+  &[type=checkbox] {
+    width: inherit;
+    margin-left: 10px;
+  }
+
   &[type=submit] {
     width: 100px;
 

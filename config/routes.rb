@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # archive
   resources :posts
   controller :posts do
-    get 'posts/archive', as: 'archive'
+    get 'archive', as: 'archive'
     post 'posts/markdown'
   end
 

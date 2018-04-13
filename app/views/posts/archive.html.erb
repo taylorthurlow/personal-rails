@@ -6,13 +6,15 @@
 
 <table id="post_archive">
   <thead>
+    <td>Pub</td>
     <td>Title</td>
-    <td width="150">Created</td>
-    <td width="150">Updated</td>
+    <td>Created</td>
+    <td>Updated</td>
   </thead>
 
   <% @posts.each do |post| %>
   <tr>
+    <td style="text-align: center;"><%= post.published ? '✓' : '' %></td>
     <td><%= link_to post.title, post_url(post) %></td>
     <td><%= post.created_at.localtime.strftime('%b %e %Y, %l:%M %p') %></td>
     <td><%= post.updated_at.localtime.strftime('%b %e %Y, %l:%M %p') %></td>
