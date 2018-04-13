@@ -61,11 +61,11 @@ body {
     font-family: "Serif Beta";
     font-weight: bold;
     line-height: 100%;
-    margin: 0;
+    margin: 1.5em 0 0 0;
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 3.5em;
 
     @media (max-width: $break_mobile) {
       font-size: 3em;
@@ -76,15 +76,23 @@ body {
     font-size: 3em;
 
     @media (max-width: $break_mobile) {
-      font-size: 2em;
+      font-size: 2.5em;
     }
   }
 
   h3 {
+    font-size: 2.5em;
+
+    @media (max-width: $break_mobile) {
+      font-size: 2em;
+    }
+  }
+
+  h4 {
     font-size: 2em;
 
     @media (max-width: $break_mobile) {
-      font-size: 1em;
+      font-size: 1.5em;
     }
   }
 
@@ -137,7 +145,11 @@ body {
     padding: 75px 50px;
     text-align: center;
 
-    h1 { line-height: 110%; }
+    h1 {
+      font-size: 4em;
+      line-height: 110%;
+      margin: 0;
+    }
 
     &-social {
       margin-top: 30px;
