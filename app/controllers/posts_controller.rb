@@ -17,6 +17,14 @@ class PostsController < ApplicationController
   def show
   end
 
+  def markdown
+    content = request.body.string
+
+    renderer = Redcarpet::Render::HTML.new(prettify: true)
+    markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true)
+    render json: { content: markdown.render(content) }
+  end
+
   def new
     @post = Post.new
   end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :posts
   controller :posts do
     get 'posts/archive', as: 'archive'
+    post 'posts/markdown'
   end
 
   # sessions

@@ -12,20 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :title, size: 75, placeholder: 'title' %>
+    <%= f.text_field :title, placeholder: 'title' %>
   </div>
 
   <% if @post.new_record? %>
     <div class="field">
-      <%= f.text_field :slug, size: 50, placeholder: 'slug' %>
+      <%= f.text_field :slug, placeholder: 'slug' %>
     </div>
   <% end %>
 
   <div class="field monospace">
-    <%= f.text_area :contents, cols: 75, rows: 50, placeholder: 'Post body (accepts markdown)' %>
+    <%= f.text_area :contents, placeholder: 'Post body (accepts markdown)', id: 'content_text' %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
+    <%= button_tag 'Preview', type: 'button', onclick: 'markdownPreview()' %>
   </div>
 <% end %>
+
+<div class="post_preview"></div>
+
+<script>
+  function markdownPreview() {
+    $.ajax({
+      url: "/posts/markdown",
+      method: "POST",
+      data: $("#content_text").val()
+    }).done(function(data) {
+      $(".post_preview").html('<div class="blog_post"><div class="blog_post_contents">' + data["content"] + '</div></div>');
+      PR.prettyPrint();
+    });
+  };
+</script>

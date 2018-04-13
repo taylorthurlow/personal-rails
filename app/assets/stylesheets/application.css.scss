@@ -336,68 +336,62 @@ body {
   }
 }
 
-.login_form {
+form {
   text-align: center;
+}
 
-  .input {
-    padding: 10px 0px 10px 0px;
+input, textarea, button {
+  width: 700px;
+  border: 2px solid lighten($muted_text_color, 32);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px 0;
 
-    input {
-      font-size: 1em;
-      border: 2px solid lighten($muted_text_color, 32);
-      border-radius: 3px;
+  &[type=text], &[type=password] {
+    font-size: 1em;
 
-      &[type=text], &[type=password] {
-        padding: 10px;
+    &:focus { outline: none; }
+  }
 
-        &:focus {
-          outline: none;
-        }
-      }
+  &[type=submit] {
+    width: 100px;
 
-      &[type=submit] {
-        background-color: darken($background_color_alt, 4);
-        padding: 5px 10px;
-      }
+    &:focus { outline: none; }
+
+    &:hover {
+      background-color: darken($background-color, 16);
+      cursor: pointer;
+    }
+  }
+
+  &[type=button] {
+    width: 100px;
+    padding: 5px;
+    margin: 0;
+
+    &:focus { outline: none; }
+
+    &:hover {
+      background-color: darken($background-color, 16);
+      cursor: pointer;
     }
   }
 }
 
-// // should match all ~~~~ code blocks
-// pre {
-//   overflow: scroll;
+.login_form {
+  input[type=text], input[type=password] {
+    width: 200px;
+  }
+}
 
-//   > code.prettyprint.prettyprinted {
-//     white-space: no-wrap;
-//     font-size: 14px;
-//   }
-// }
+.button {
+  width: 100px;
+}
 
-// // should match all `` inline code
-// p > code.prettyprint.prettyprinted, li > code.prettyprint.prettyprinted {
-//   padding: 0px 1px;
-//   background-color: rgb(200, 200, 200);
-
-//   > span.pln, > span.pun, > span.kwd, > span.typ, > span.lit, > span.str {
-//     color: $primary_color;
-//     padding: 2px 0px;
-//     margin: 0px;
-//     font-size: 15px;
-//   }
-// }
-
-// .contact {
-//   display: flex;
-//   justify-content: center;
-
-//   .contact_cell {
-//     width: 266px; // 800/3 = 266.6666667
-//     height: 150px;
-//     text-align: center;
-//     line-height: 150px;
-//     font-size: 20px;
-//   }
-// }
+textarea {
+  font-size: 1.5em;
+  height: 500px;
+}
 
 .monospace {
   textarea {
