@@ -37,6 +37,7 @@ group :development, :test do
   gem 'guard'                     # Make tests auto-run when changing files
   gem 'guard-livereload', '2.3.0', require: false
   gem 'guard-minitest'
+  gem 'rails_real_favicon'        # favicons for all platforms
   gem 'sqlite3'                   # Use sqlite3 as the database for Active Record
 end
 
