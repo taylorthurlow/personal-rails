@@ -2,7 +2,7 @@
 lock "3.8.2"
 
 set :application, "blog"
-set :deploy_user, "taylor"
+set :deploy_user, "www-data"
 
 set :repo_url, "git@github.com:taylorthurlow/personal-rails.git"
 
