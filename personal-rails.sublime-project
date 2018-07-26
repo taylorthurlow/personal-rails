@@ -1,18 +1,17 @@
 {
-	"folders":
-	[
-		{
-			"path": ".",
-			"folder_exclude_patterns": [
-                ".bundle",
-                "vendor",
-                "log",
-                "bin",
-		        "tmp"
-		    ],
-		    "file_exclude_patterns": [
-		    	".keep"
-		    ]
-		}
-	]
+  "folders": [
+    {
+      "path": ".",
+      "folder_exclude_patterns": [
+        ".bundle",
+        "vendor",
+        "log",
+        "bin",
+        "tmp"
+      ],
+      "file_exclude_patterns": [
+        ".keep"
+      ]
+    }
+  ]
 }

@@ -9,19 +9,15 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
+/log
 /tmp
 .byebug_history
-
-# Coverage
-/coverage
 
 # bundler
 /vendor
 /.bundle
 
-# IDE junk
-*.sublime-workspace
-
+# junk
+*.sublime-*
 .DS_Store
+/coverage
