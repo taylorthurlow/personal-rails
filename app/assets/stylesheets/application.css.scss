@@ -24,7 +24,7 @@ $primary_color: #323648;
 $accent_color: #4b0082;
 $link_color: #f16464;
 
-$max_page_width: 1400px;
+$max_page_width: 1100px;
 
 $break_mobile: 850px;
 
@@ -324,7 +324,7 @@ body {
       flex-basis: 70%;
       font-size: 1em;
 
-      margin: 20px 0 0 40px;
+      margin: -20px 0 0 40px;
 
       p {
         margin: 20px 0 0 0 ;
