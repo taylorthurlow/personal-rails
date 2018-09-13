@@ -25,7 +25,7 @@ Login.create!({
 
 Post.create!({
   title: 'This Is a Random Post, Right?',
-  tag_line: 'Some clever tag line should go here.',
+  published: true,
   slug: 'some-clever-post-slug',
   contents: lorem_ipsum
 })

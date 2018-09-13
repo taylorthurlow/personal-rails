@@ -12,28 +12,14 @@
   </head>
   <body>
     <div class="container">
-      <div id="header-wrapper">
-        <div id="header">
-          <% if content_for?(:header_text) %>
-            <h1><%= yield(:header_text) %></h1>
-          <% else %>
-            <%= link_to image_tag('logo-128.png'), root_url %>
-            <div id="header-social">
-              <%= link_to '', 'https://github.com/taylorthurlow', class: 'fa fa-github fa-2x', target: '_blank' %>
-              <%= link_to '', portfolio_path, class: 'fa fa-user-circle fa-2x', style: 'font-size: 180%;' %>
-            </div>
-          <% end %>
+      <div id="sidebar">
+        <%= link_to image_tag('logo-128.png'), root_url %>
+        <div id="sidebar-social">
+          <%= link_to '', 'https://github.com/taylorthurlow', class: 'fa fa-github fa-2x', target: '_blank' %>
+          <%#= link_to '', portfolio_path, class: 'fa fa-user-circle fa-2x', style: 'font-size: 180%;' %>
         </div>
-      </div>
 
-      <div id="content-wrapper">
-        <div id="content">
-          <%= yield %>
-        </div>
-      </div>
-
-      <div id="footer-wrapper">
-        <div id="footer">
+        <div id="sidebar-footer">
           <p><%= link_to "&copy;".html_safe, new_session_url %><%=Time.now.year%> Taylor Thurlow</p>
           <% if authenticated? %>
             <p>
@@ -43,6 +29,9 @@
             </p>
           <% end %>
         </div>
+      </div>
+      <div id="content">
+        <%= yield %>
       </div>
     </div>
   </body>

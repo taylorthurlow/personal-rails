@@ -18,7 +18,7 @@
 @import "fonts";
 
 $background_color: #ffffff;
-$background_color_alt: #f5f5f5;
+$background_color_alt: #fafafa;
 $muted_text_color: #5b5e6d;
 $primary_color: #323648;
 $accent_color: #4b0082;
@@ -26,10 +26,11 @@ $link_color: #f16464;
 
 $max_page_width: 1100px;
 
-$break_mobile: 850px;
+$desktop: 850px;
 
 html, body {
   height: 100%;
+  max-height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -37,15 +38,15 @@ html, body {
 body {
   color: $primary_color;
   background-color: $background_color;
-  margin: 0;
   font-family: 'Aller';
 
   p, li {
-    font-size: 1.5em;
-    line-height: 1.5em;
+    font-size: 1em;
+    line-height: 1.75em;
 
-    @media (max-width: $break_mobile) {
-      font-size: 1em;
+    @media (min-width: $desktop) {
+      font-size: 1.1em;
+      line-height: 1.5em;
     }
 
     a, a:visited {
@@ -65,34 +66,34 @@ body {
   }
 
   h1 {
-    font-size: 3.5em;
+    font-size: 3em;
 
-    @media (max-width: $break_mobile) {
-      font-size: 3em;
+    @media (min-width: $desktop) {
+      font-size: 3.5em;
     }
   }
 
   h2 {
-    font-size: 3em;
+    font-size: 2.5em;
 
-    @media (max-width: $break_mobile) {
-      font-size: 2.5em;
+    @media (min-width: $desktop) {
+      font-size: 3em;
     }
   }
 
   h3 {
-    font-size: 2.5em;
+    font-size: 2em;
 
-    @media (max-width: $break_mobile) {
-      font-size: 2em;
+    @media (min-width: $desktop) {
+      font-size: 2.5em;
     }
   }
 
   h4 {
-    font-size: 2em;
+    font-size: 1.5em;
 
-    @media (max-width: $break_mobile) {
-      font-size: 1.5em;
+    @media (min-width: $desktop) {
+      font-size: 2em;
     }
   }
 
@@ -116,78 +117,47 @@ body {
 }
 
 #notice {
-  @media (max-width: $break_mobile) {
-    text-align: center;
-  }
+  text-align: center;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 100%;
   margin: 0;
-}
 
-#header-wrapper {
-  width: 100%;
-  background-color: $background_color_alt;
-
-  #header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    max-width: $max_page_width;
-    min-height: inherit;
-    margin: 0 auto;
-    padding: 75px 50px;
-    text-align: center;
-
-    h1 {
-      font-size: 4em;
-      line-height: 110%;
-      margin: 0;
-    }
-
-    &-social {
-      margin-top: 30px;
-
-      a {
-        margin: 0px 10px;
-      }
-    }
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    height: 100vh;
   }
 }
 
-#content-wrapper {
-  width: 100%;
+#sidebar {
   flex: 1;
+  background-color: $background_color_alt;
+  padding: 25px 0 35px 0;
+  text-align: center;
 
-  #content {
-    max-width: $max_page_width;
-    margin: 0 auto;
-    padding: 50px;
+  @media (min-width: $desktop) {
+    max-width: 350px;
+    min-width: 200px;
+  }
 
-    @media (max-width: $break_mobile) {
-      padding-left: 20px;
-      padding-right: 20px;
+  h1 {
+    font-size: 4em;
+    line-height: 110%;
+    margin: 0;
+  }
+
+  &-social {
+    margin-top: 30px;
+
+    a {
+      margin: 0px 10px;
     }
   }
-}
 
-#footer-wrapper {
-  width: 100%;
-
-  #footer {
-    display: flex;
-    flex-direction: column;
-    min-height: 50px;
-    width: 100%;
-    background-color: $background_color_alt;
-    color: darken($background_color_alt, 32);
-
+  &-footer {
+    margin-top: 20px;
     p {
       width: 100%;
       margin: 0;
@@ -202,16 +172,26 @@ body {
   }
 }
 
+#content {
+  flex: 2;
+  overflow-x: auto;
+  padding: 25px 0;
+
+  @media (min-width: $desktop) {
+    padding: 25px 50px;
+    overflow-y: scroll;
+  }
+}
+
 .blog_entries {
   .blog_entry {
     &_title {
+      font-size: 2em;
     }
 
     &_date_line {
-      p {
-        color: $muted_text_color;
-        margin: 15px;
-      }
+      color: $muted_text_color;
+      margin-top: 10px;
     }
 
     &:not(:last-child) {
@@ -221,8 +201,12 @@ body {
 }
 
 .blog_post {
-  &_return_link {
+  &_title {
     text-align: center;
+
+    h2 {
+      margin: 10px 0px 10px;
+    }
   }
 
   &_date_line {
@@ -236,17 +220,30 @@ body {
   }
 
   &_contents {
+
+    p {
+      padding: 0 20px;
+
+      @media (min-width: $desktop) {
+        padding: 0;
+      }
+    }
+
     pre {
       background-color: #222;
-      border-radius: 2px;
       overflow-x: auto;
-      padding: 20px;
+      padding: 10px;
+
+      @media (min-width: $desktop) {
+        border-radius: 2px;
+        padding: 20px;
+      }
 
       code.prettyprint {
-        font-size: 1.25em;
+        font-size: .85em;
 
-        @media (max-width: $break_mobile) {
-          font-size: .75em;
+        @media (min-width: $desktop) {
+          font-size: 1em;
         }
       }
 
@@ -300,7 +297,7 @@ body {
   &-entry {
     display: flex;
 
-    @media (max-width: $break_mobile) {
+    @media (max-width: $desktop) {
       flex-direction: column;
     }
 
@@ -330,7 +327,7 @@ body {
         margin: 20px 0 0 0 ;
       }
 
-      @media (max-width: $break_mobile) {
+      @media (max-width: $desktop) {
         margin: 30px 0 0 0 ;
       }
     }
