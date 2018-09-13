@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
 
   def date_line
     line = 'posted ' + created_at.localtime.strftime('%b %e %Y')
-    if ((created_at - updated_at).abs / 1.minute) > 1.day
+    if ((created_at - updated_at).abs / 1.minute) > (1.day / 1.minute)
       line += ', last updated ' + updated_at.localtime.strftime('%b %e %Y')
     end
     return line
