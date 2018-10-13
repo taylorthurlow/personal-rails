@@ -303,24 +303,47 @@ body {
 }
 
 .portfolio {
+  margin: 0 20px;
+
+  @media (min-width: $desktop + 400px) {
+    margin: 0;
+
+    hr {
+      display: none;
+    }
+  }
+
   &-entry {
     display: flex;
+    flex-direction: column;
 
-    @media (max-width: $desktop) {
-      flex-direction: column;
+    @media (min-width: $desktop + 400px) {
+      flex-direction: row;
+    }
+
+    &:not(:first-child) {
+      margin-top: 50px;
     }
 
     &:not(:last-child) {
-      margin-bottom: 100px;
+      margin-bottom: 25px;
     }
 
     &-thumbnail {
-      // width: 720px;
-      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+
+      @media (min-width: $desktop) {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+
+      @media (min-width: $desktop + 400px) {
+        width: 400px;
+      }
 
       img {
         box-shadow: 0 0 3px black;
-        width: 100%;
         max-width: 100%;
         border-radius: 3px;
       }
@@ -330,14 +353,20 @@ body {
       flex-basis: 70%;
       font-size: 1em;
 
-      margin: -20px 0 0 40px;
+      @media (min-width: $desktop) {
+        margin: 30px 0 0 20px;
 
-      p {
-        margin: 20px 0 0 0 ;
+        h1, h2, h3, h4, h5 {
+          margin: 0 0 20px;
+        }
       }
 
-      @media (max-width: $desktop) {
-        margin: 30px 0 0 0 ;
+      @media (min-width: $desktop + 400px) {
+        margin: 20px 0 0 20px;
+
+        h1, h2, h3, h4, h5 {
+          margin: 0 0 20px;
+        }
       }
     }
   }
@@ -355,7 +384,6 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 5px;
-    // border: 1px solid black;
   }
 
   thead td {
