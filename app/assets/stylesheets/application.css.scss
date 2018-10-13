@@ -222,6 +222,13 @@ body {
   }
 
   &_contents {
+    h1, h2, h3, h4, h5 {
+      margin: 20px;
+
+      @media (min-width: $desktop) {
+        margin: 1.5em 0 0 0;
+      }
+    }
 
     p {
       padding: 0 20px;
