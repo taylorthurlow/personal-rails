@@ -98,7 +98,7 @@ button[type=password] {
 }
 
 #post-content pre code.prettyprint[class*='lang-plain'] > span {
-	@apply text-white;
+	color: #c5c8c6;
 }
 
 #post-content code.prettyprint:not([class*='lang']) {
