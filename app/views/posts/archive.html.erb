@@ -4,7 +4,7 @@
   Post Archive
 <% end %>
 
-<table id="post_archive">
+<table id="post-archive" class="border-collapse">
   <thead>
     <td>Pub</td>
     <td>Title</td>
@@ -13,11 +13,11 @@
   </thead>
 
   <% @posts.each do |post| %>
-  <tr>
-    <td style="text-align: center;"><%= post.published ? '✓' : '' %></td>
-    <td><%= link_to post.title, post_url(post) %></td>
-    <td><%= post.created_at.localtime.strftime('%b %e %Y, %l:%M %p') %></td>
-    <td><%= post.updated_at.localtime.strftime('%b %e %Y, %l:%M %p') %></td>
-  </tr>
+    <tr>
+      <td class="text-center"><%= post.published ? '✓' : '' %></td>
+      <td><%= link_to post.title, post_url(post) %></td>
+      <td><%= post.created_at.localtime.strftime('%m/%e/%y') %></td>
+      <td><%= post.updated_at.localtime.strftime('%m/%e/%y') %></td>
+    </tr>
   <% end %>
 </table>

@@ -2,25 +2,27 @@
 <html>
   <head>
     <title>Taylor Thurlow</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= render 'application/favicon' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <%= render 'application/favicon' %>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script src='//unpkg.com/code-prettify@latest/src/prettify.js'></script>
     <%= stylesheet_link_tag 'prettify_tomorrow_night', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+    <script src='//unpkg.com/code-prettify@latest/src/prettify.js'></script>
   </head>
-  <body>
-    <div class="container">
-      <div id="sidebar">
+  <body class="bg-grey-lightest text-grey-darkest font-sans">
+    <div id="container" class="flex flex-col lg:flex-row">
+      <div id="sidebar" class="flex flex-col bg-grey-lighter text-center px-4 py-6 lg:static lg:block lg:w-64 lg:h-screen lg:sticky lg:pin-l lg:pin-t">
         <%= link_to image_tag('logo-128.png'), root_url %>
-        <div id="sidebar-social">
-          <%= link_to '', 'https://github.com/taylorthurlow', class: 'fa fa-github fa-2x', target: '_blank' %>
-          <%= link_to '', portfolio_path, class: 'fa fa-user-circle fa-2x', style: 'font-size: 180%;' %>
+        <div id="sidebar-social" class="text-grey p-10">
+          <%= link_to '', 'https://github.com/taylorthurlow', class: 'text-black fa fa-github fa-2x', target: '_blank' %>
+          <%= link_to '', portfolio_path, class: 'text-black fa fa-user-circle fa-2x', style: 'font-size: 180%; margin-left: 10px' %>
         </div>
 
         <div id="sidebar-footer">
-          <p><%= link_to "&copy;".html_safe, new_session_url %><%=Time.now.year%> Taylor Thurlow</p>
+          <p class="text-grey"><%= link_to "&copy;".html_safe, new_session_url, class: 'text-grey' %><%= Time.now.year %> Taylor Thurlow</p>
           <% if authenticated? %>
             <p>
               <%= link_to '', new_post_path, class: "fa fa-pencil" %>
@@ -30,7 +32,7 @@
           <% end %>
         </div>
       </div>
-      <div id="content">
+      <div id="content" class="p-6 mx-auto max-w-full md:max-w-md md:min-h-screen lg:mt-4">
         <%= yield %>
       </div>
     </div>

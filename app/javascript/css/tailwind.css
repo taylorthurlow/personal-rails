@@ -1,0 +1,155 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind preflight;
+
+a {
+	@apply text-purple-dark no-underline;
+}
+
+h1, h2, h3, h4, h5 {
+	@apply font-serif;
+}
+
+input, textarea, button {
+	@apply w-full border-2 p-2 my-2 mx-0;
+}
+
+textarea {
+	width: 500px;
+	height: 300px;
+}
+
+input[type=text],
+input[type=password],
+textarea[type=text],
+textarea[type=password],
+button[type=text],
+button[type=password] {
+	@apply text-base;
+}
+
+.login_form input[type=text],
+.login_form input[type=password] {
+	@apply w-full;
+}
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/* CODE BLOCKS AND INLINE CODE */
+
+#post-content pre {
+	@apply bg-black overflow-x-auto p-3 -mx-6;
+}
+
+@screen lg {
+	#post-content pre {
+		@apply p-4 rounded-sm mx-auto;
+	}
+
+	#post-content pre code.prettyprint {
+		@apply text-base;
+	}
+}
+
+#post-content pre code.prettyprint {
+	@apply text-sm;
+}
+
+#post-content pre code.prettyprint[class*='lang-plain'] > span {
+	@apply text-white;
+}
+
+#post-content code.prettyprint:not([class*='lang']) {
+	@apply bg-grey-light rounded-sm;
+	padding: 0.03rem 0.2rem;
+}
+
+#post-content code.prettyprint:not([class*='lang']) > span {
+	@apply text-black text-sm;
+}
+
+#post-content img {
+	@apply block mx-auto;
+	/*max-width: 100%;*/
+}
+
+#post-content p {
+	@apply my-4;
+}
+
+#post-content h1,
+#post-content h2,
+#post-content h3,
+#post-content h4,
+#post-content h5 {
+	@apply mt-8;
+}
+
+#post-archive td {
+	@apply px-2;
+}
+
+#post-archive thead td {
+	@apply font-bold;
+}
+
+#form {
+	@apply text-center;
+}
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
