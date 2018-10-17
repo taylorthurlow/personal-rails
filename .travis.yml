@@ -5,6 +5,7 @@ rvm:
 env:
   global:
     - CC_TEST_REPORTER_ID=74d10c960bd192ae5c60c977497aa73f8d8d5d996a8c57cfe794f73f37702d1f
+    - NODE_ENV=test
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -12,6 +13,7 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
+  - bundle exec rake webpacker:compile
   - bundle exec rake db:schema:load
   - bundle exec rake
 
