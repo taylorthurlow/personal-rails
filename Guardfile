@@ -1,6 +1,5 @@
 guard 'livereload' do
-  watch(%r{app/views/(.*)\//.+\.(erb|haml|slim)$})
-  watch(%r{app/helpers/(.*)\//.+\.rb})
+  watch(%r{app/.+\.(erb|haml)$})
   watch(%r{public/.+\.(css|js|html)})
   watch(%r{test/.+\.(js)})
   watch(%r{config/locales/.+\.yml})

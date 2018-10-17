@@ -11,8 +11,10 @@ gem 'redcarpet'                   # markdown
 gem 'responders'                  # DRYer controller responses
 gem 'sass-rails', '~> 5.0'        # Use SCSS for stylesheets
 gem 'sitemap_generator'           # sitemap for SEO
+gem 'tailwindcss', '~> 0.2.0'
 gem 'turbolinks'                  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'uglifier', '>= 1.3.0'        # Use Uglifier as compressor for JavaScript assets
+gem 'webpacker', '~> 3.5'         # js dependencies
 
 group :development do
   gem 'better_errors'                               # better error pages

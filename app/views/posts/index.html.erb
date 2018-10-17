@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<div class="blog_entries">
+<div class="">
   <% @posts.each do |post| %>
-    <div class="blog_entry">
-      <h2 class="blog_entry_title"><%= link_to post.title, post_url(post) %></h2>
+    <div class="pb-5">
+      <h2 class="font-serif text-2xl mb-2"><%= link_to post.title, post_url(post) %></h2>
       <div class="blog_entry_date_line"><%= post.date_line %></div>
     </div>
   <% end %>
