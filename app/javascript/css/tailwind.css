@@ -15,7 +15,7 @@ a {
 	@apply text-purple-dark no-underline;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
 	@apply font-serif;
 }
 
@@ -121,9 +121,7 @@ button[type=password] {
 
 #post-content h1,
 #post-content h2,
-#post-content h3,
-#post-content h4,
-#post-content h5 {
+#post-content h3 {
 	@apply mt-8;
 }
 
