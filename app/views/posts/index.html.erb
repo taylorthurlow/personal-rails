@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<div class="">
+<div>
   <% @posts.each do |post| %>
     <div class="pb-5">
-      <h2 class="font-serif text-2xl mb-2"><%= link_to post.title, post_url(post) %></h2>
-      <div class="blog_entry_date_line"><%= post.date_line %></div>
+      <%#= image_tag 'https://via.placeholder.com/800x450', class: '' %>
+      <h2 class="text-3xl mb-2"><%= link_to post.title, post_url(post), class: 'text-grey-darkest' %></h2>
+      <div class="font-serif blog_entry_date_line"><%= post.date_line %></div>
     </div>
   <% end %>
 </div>
 
-<div class="pagination">
+<div class="text-center">
   <%= paginate @posts %>
 </div>
