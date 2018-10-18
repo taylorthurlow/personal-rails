@@ -31,6 +31,7 @@ end
 
 group :test do
   gem 'mocha'
+  gem 'rails-controller-testing'          # allow old rails testing stuff
   gem 'simplecov', require: false                   # generate test coverage reports
 end
 
