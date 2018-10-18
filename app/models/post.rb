@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 

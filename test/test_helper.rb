@@ -10,14 +10,17 @@ end
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-require 'mocha/mini_test'
+require 'mocha/minitest'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
   def login_as(login)
-    session[:login_id] = logins(login).id
+    post sessions_url, params: {
+      username: logins(login).username,
+      password: 'secret'
+    }
   end
 
   def logout
