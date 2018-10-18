@@ -9,7 +9,7 @@ gem 'kaminari'                    # pagination
 gem 'rails', '5.2.1'              # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'redcarpet'                   # markdown
 gem 'responders'                  # DRYer controller responses
-gem 'sass-rails'        # Use SCSS for stylesheets
+gem 'sassc-rails'        # Use SCSS for stylesheets (deprecated, see sass/sassc-rails#105)
 gem 'sitemap_generator'           # sitemap for SEO
 gem 'tailwindcss'
 gem 'turbolinks'                  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
