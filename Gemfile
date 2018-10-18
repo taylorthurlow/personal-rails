@@ -7,6 +7,7 @@ gem 'font-awesome-rails'          # cool icons
 gem 'friendly_id'    # nice URL slugs
 gem 'jquery-rails'                # Use jquery as the JavaScript library
 gem 'kaminari'                    # pagination
+gem 'puma'                          # multithreaded webserver
 gem 'rails', '5.2.1'              # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'redcarpet'                   # markdown
 gem 'responders'                  # DRYer controller responses
