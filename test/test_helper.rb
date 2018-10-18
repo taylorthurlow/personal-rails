@@ -17,7 +17,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def login_as(login)
-    session[:login_id] = logins(login).id
+    post sessions_url, params: {
+      username: logins(login).username,
+      password: 'secret'
+    }
   end
 
   def logout

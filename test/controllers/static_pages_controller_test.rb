@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class StaticPagesControllerTest < ActionController::TestCase
+class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test 'should get portfolio' do
-    get :portfolio
+    get portfolio_url
     assert_response :success
   end
 end
