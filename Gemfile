@@ -18,15 +18,15 @@ gem 'webpacker'       # js dependencies
 
 group :development do
   gem 'better_errors'                               # better error pages
-  gem 'capistrano',                    # Use Capistrano for deployment
-  gem 'capistrano-ext',
+  gem 'capistrano'                    # Use Capistrano for deployment
+  gem 'capistrano-ext'
   gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-rbenv'
   gem 'rubocop'
   gem 'spring'                                      # speeds up development by keeping your application running in the background
-  gem 'web-console',                      # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console'                      # Access an IRB console on exception pages or by using <%= console %> in views
 end
 
 group :test do
