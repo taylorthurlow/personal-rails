@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt'          # Use ActiveModel has_secure_password
+gem 'bootsnap'        # faster server loading
 gem 'coffee-rails'    # Use CoffeeScript for .coffee assets and views
 gem 'font-awesome-rails'          # cool icons
 gem 'friendly_id'    # nice URL slugs
