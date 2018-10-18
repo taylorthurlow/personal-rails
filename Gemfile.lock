@@ -160,7 +160,7 @@ GEM
     mocha (1.7.0)
       metaclass (~> 0.0.1)
     multi_json (1.13.1)
-    mysql (2.9.1)
+    mysql2 (0.5.2)
     nenv (0.3.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -318,7 +318,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mocha
-  mysql
+  mysql2
   rails (= 4.2.6)
   rails_real_favicon
   redcarpet
