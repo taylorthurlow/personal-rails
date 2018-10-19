@@ -11,10 +11,23 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - bundle exec rake db:schema:load RAILS_ENV=test
+
+cache:
+  bundler: true
+  directories:
+    - node_modules
+  yarn: true
+
+install:
+  - bundle install
+  - nvm install node
+  - node -v
+  - npm i -g yarn
+  - yarn
 
 script:
-  - bundle exec rake webpacker:compile
-  - bundle exec rake db:schema:load
+  - bundle exec rails webpacker:compile
   - bundle exec rake
 
 after_script:
