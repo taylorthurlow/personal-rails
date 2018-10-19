@@ -14,11 +14,13 @@
   </head>
   <body class="bg-grey-lightest text-grey-darkest font-sans">
     <div id="container" class="flex flex-col lg:flex-row">
-      <div id="sidebar" class="flex flex-col bg-grey-lighter text-center px-4 py-6 lg:static lg:block lg:w-64 lg:h-screen lg:sticky lg:pin-l lg:pin-t">
-        <%= link_to image_tag('logo-128.png'), root_url %>
-        <div id="sidebar-social" class="text-grey p-10">
-          <%= link_to '', 'https://github.com/taylorthurlow', class: 'text-black fa fa-github fa-2x', target: '_blank' %>
-          <%= link_to '', portfolio_path, class: 'text-black fa fa-user-circle fa-2x', style: 'font-size: 180%; margin-left: 10px' %>
+      <div id="sidebar" class="flex flex-col bg-grey-lighter text-center px-4 py-6 lg:static lg:justify-between lg:w-64 lg:h-screen lg:sticky lg:pin-l lg:pin-t">
+        <div>
+          <%= link_to image_tag('logo-128.png'), root_url %>
+          <div id="sidebar-social" class="text-grey p-10">
+            <%= link_to '', 'https://github.com/taylorthurlow', class: 'text-black fa fa-github fa-2x', target: '_blank' %>
+            <%= link_to '', portfolio_path, class: 'text-black fa fa-user-circle fa-2x', style: 'font-size: 180%; margin-left: 10px' %>
+          </div>
         </div>
 
         <div id="sidebar-footer">
