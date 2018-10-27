@@ -7,13 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server 'thurlow.io', user: 'taylor', roles: %w{app web db}
-set :branch, 'master'
-set :rails_env, 'production'
-set :rbenv_ruby, '2.3.1'
-set :deploy_to, "/var/www/html/blog"
 
-set :sitemap_roles, :web
 
 # role-based syntax
 # ==================
@@ -27,9 +21,7 @@ set :sitemap_roles, :web
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :app, %w{taylor@thurlow.io}
-role :web, %w{taylor@thurlow.io}
-role :db,  %w{taylor@thurlow.io}
+
 
 # Configuration
 # =============

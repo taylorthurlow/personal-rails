@@ -7,10 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server 'staging.thurlow.io', user: 'taylor', roles: %w{app web db}
-set :branch, 'staging'
-set :rails_env, 'staging'
-set :deploy_to, "/var/www/html/blog_staging"
+
 
 # role-based syntax
 # ==================
@@ -24,9 +21,7 @@ set :deploy_to, "/var/www/html/blog_staging"
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :app, %w{taylor@staging.thurlow.io}
-role :web, %w{taylor@staging.thurlow.io}
-role :db,  %w{taylor@staging.thurlow.io}
+
 
 # Configuration
 # =============

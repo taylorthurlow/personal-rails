@@ -1,28 +1,15 @@
-# Load DSL and set up stages
 require 'capistrano/setup'
-
-# Include default deployment tasks
 require 'capistrano/deploy'
 
-# Include capistrano-rails
 require 'capistrano/rails'
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/console'
-
-# Include passenger
-require 'capistrano/passenger'
-
 require 'capistrano/sitemap_generator'
 
-# Load the SCM plugin appropriate to your project:
-#
-# require "capistrano/scm/hg"
-# install_plugin Capistrano::SCM::Hg
-# or
-# require "capistrano/scm/svn"
-# install_plugin Capistrano::SCM::Svn
-# or
+require 'capistrano/puma'
+install_plugin Capistrano::Puma
+
 require 'capistrano/scm/git'
 install_plugin Capistrano::SCM::Git
 

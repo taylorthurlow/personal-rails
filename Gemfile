@@ -7,6 +7,7 @@ gem 'font-awesome-rails'          # cool icons
 gem 'friendly_id'    # nice URL slugs
 gem 'jquery-rails'                # Use jquery as the JavaScript library
 gem 'kaminari'                    # pagination
+gem 'pg'                  # use postgresql as main database
 gem 'puma'                          # multithreaded webserver
 gem 'rails', '5.2.1'              # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'redcarpet'                   # markdown
@@ -22,10 +23,10 @@ group :development do
   gem 'better_errors'                               # better error pages
   gem 'capistrano'                    # Use Capistrano for deployment
   gem 'capistrano-ext'
-  gem 'capistrano-passenger'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
   gem 'rubocop'
   gem 'spring'                                      # speeds up development by keeping your application running in the background
   gem 'web-console'                      # Access an IRB console on exception pages or by using <%= console %> in views
@@ -43,9 +44,4 @@ group :development, :test do
   gem 'guard-livereload', require: false
   gem 'guard-minitest'
   gem 'rails_real_favicon'        # favicons for all platforms
-  gem 'sqlite3'                   # Use sqlite3 as the database for Active Record
-end
-
-group :production do
-  gem 'mysql2'                    # use mySQL in production instead of SQLite
 end
