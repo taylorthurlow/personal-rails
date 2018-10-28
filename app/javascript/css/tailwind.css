@@ -127,7 +127,7 @@ button[type=password] {
 
 #post-content code.prettyprint:not([class*='lang']) > span {
 	@apply text-black;
-	font-size: 0.85em;
+	font-size: 0.9em;
 }
 
 #post-content img {
