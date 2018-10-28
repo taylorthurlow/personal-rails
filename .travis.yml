@@ -25,6 +25,9 @@ install:
   - node -v
   - npm i -g yarn
   - yarn
+  
+before_script:
+  - psql -c 'create database personal-test;' -U postgres
 
 script:
   - bundle exec rails webpacker:compile
