@@ -27,7 +27,7 @@ install:
   - yarn
   
 before_script:
-  - psql -c 'create database personal-test;' -U postgres
+  - psql -c 'create database "personal-test";' -U postgres
 
 script:
   - bundle exec rails webpacker:compile
