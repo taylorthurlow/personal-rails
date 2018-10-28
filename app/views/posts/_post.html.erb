@@ -1,12 +1,12 @@
-<div class="">
+<div>
   <div class="text-center"><h2 class="text-5xl mb-6"><%= post.title %></h2></div>
-  <div class="text-center font-serif mb-6"><%= post.date_line %></div>
+  <div class="text-center font-serif mb-6 md:text-xl xl:text-2xl"><%= post.date_line %></div>
   <div class="bg-purple-dark opacity-25 w-full h-px mb-6"></div>
-    <% if authenticated? %>
-      <%= link_to '', edit_post_url(post), class: "fa fa-pencil" %>
-      <%= link_to '', post_url(post), method: :delete, class: "fa fa-trash", data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>
+  <% if authenticated? %>
+    <%= link_to '', edit_post_url(post), class: "fa fa-pencil" %>
+    <%= link_to '', post_url(post), method: :delete, class: "fa fa-trash", data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>
 
   <div id="post-content" class="leading-tight">
     <%= post.generate_markdown_html.html_safe %>

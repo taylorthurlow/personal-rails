@@ -84,6 +84,24 @@ button[type=password] {
 	@apply bg-black overflow-x-auto p-3 -mx-6;
 }
 
+@screen md {
+	#post-content {
+		font-size: 1em;
+	}
+}
+
+@screen lg {
+	#post-content {
+		font-size: 1.25em;
+	}
+}
+
+@screen xl {
+	#post-content {
+		font-size: 1.5em;
+	}
+}
+
 @screen lg {
 	#post-content pre {
 		@apply p-4 rounded-sm mx-auto;
@@ -95,7 +113,7 @@ button[type=password] {
 }
 
 #post-content pre code.prettyprint {
-	@apply text-sm;
+	font-size: 0.85em;
 }
 
 #post-content pre code.prettyprint[class*='lang-plain'] > span {
@@ -108,7 +126,8 @@ button[type=password] {
 }
 
 #post-content code.prettyprint:not([class*='lang']) > span {
-	@apply text-black text-sm;
+	@apply text-black;
+	font-size: 0.85em;
 }
 
 #post-content img {
