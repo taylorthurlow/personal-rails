@@ -37,6 +37,7 @@ set :puma_init_active_record, true
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml' , 'public/files/resume.pdf')
 
+set :yarn_flags, '--production --silent --no-progress'
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
