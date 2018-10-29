@@ -26,6 +26,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-rbenv'
+  gem 'capistrano-yarn'
   gem 'capistrano3-puma'
   gem 'rubocop'
   gem 'spring'                                      # speeds up development by keeping your application running in the background
