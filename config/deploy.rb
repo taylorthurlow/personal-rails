@@ -84,7 +84,7 @@ namespace :deploy do
   after  :finishing, :restart
 end
 
-after 'deploy:finishing', 'sitemap:create'
+after 'deploy:finishing', 'sitemap:refresh'
 
 # ps aux | grep puma    # Get puma pid
 # kill -s SIGUSR2 pid   # Restart puma
