@@ -1,6 +1,5 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://thurlow.io"
-SitemapGenerator::Sitemap.sitemaps_path = '/home/rails/personal/shared/public'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
