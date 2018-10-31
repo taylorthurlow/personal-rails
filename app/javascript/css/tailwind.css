@@ -144,7 +144,7 @@ button[type=password] {
 }
 
 #notice {
-	@apply text-red text-center my-10;
+	@apply text-red text-center;
 }
 
 /**
