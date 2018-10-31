@@ -100,7 +100,7 @@ button[type=password] {
 }
 
 #post-content pre code.prettyprint {
-	@apply text-sm;
+	@apply text-base;
 }
 
 #post-content pre code.prettyprint[class*='lang-plain'] > span {
@@ -113,7 +113,7 @@ button[type=password] {
 }
 
 #post-content code.prettyprint:not([class*='lang']) > span {
-	@apply text-black text-sm;
+	@apply text-black text-base;
 }
 
 #post-content img {
@@ -122,7 +122,7 @@ button[type=password] {
 }
 
 #post-content p {
-	@apply my-4;
+	@apply my-4 leading-normal;
 }
 
 #post-content h1,
