@@ -1,9 +1,10 @@
+<% title 'Blog' %>
+
 <p id="notice"><%= notice %></p>
 
 <div>
   <% @posts.each do |post| %>
     <div class="pb-5">
-      <%#= image_tag 'https://via.placeholder.com/800x450', class: '' %>
       <h2 class="text-3xl mb-2"><%= link_to post.title, post_url(post), class: 'text-grey-darkest' %></h2>
       <div class="mb-4"><%= post.date_line %></div>
     </div>
