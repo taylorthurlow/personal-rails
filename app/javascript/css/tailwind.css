@@ -86,7 +86,7 @@ button[type=password] {
 }
 
 #post-content pre {
-	@apply bg-black overflow-x-auto p-3 -mx-6;
+	@apply bg-black overflow-x-auto p-3 -mx-6 my-3;
 }
 
 @screen lg {
