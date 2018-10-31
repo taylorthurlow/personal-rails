@@ -80,6 +80,11 @@ button[type=password] {
 
 /* CODE BLOCKS AND INLINE CODE */
 
+#sidebar {
+  -webkit-box-shadow: 1px 0 1px #ddd;
+          box-shadow: 1px 0 1px #ddd;
+}
+
 #post-content pre {
 	@apply bg-black overflow-x-auto p-3 -mx-6;
 }
