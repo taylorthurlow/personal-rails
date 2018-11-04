@@ -40,9 +40,11 @@ group :test do
 end
 
 group :development, :test do
-  gem 'byebug'                    # debugger
+  gem 'binding_of_caller'
   gem 'guard'                     # Make tests auto-run when changing files
   gem 'guard-livereload', require: false
   gem 'guard-minitest'
+  gem 'pry-rails'                    # debugger
+  gem 'pry-byebug'
   gem 'rails_real_favicon'        # favicons for all platforms
 end
