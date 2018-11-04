@@ -2,6 +2,12 @@
 
 <div class="">
   <div class="text-center"><h2 class="text-5xl mb-6"><%= post.title %></h2></div>
+  <div class="text-center font-serif mb-6 text-grey-dark">
+    <% post.tags.each do |tag| %>
+      <%= link_to tag.name, posts_path(tag: tag.name), class: 'no-underline text-grey-dark' %>
+      <%= '&nbsp;&nbsp;&nbsp;'.html_safe unless tag == post.tags.last %>
+    <% end %>
+  </div>
   <div class="text-center font-serif mb-6"><%= post.date_line %></div>
   <div class="bg-purple-dark opacity-25 w-full h-px mb-6"></div>
     <% if authenticated? %>

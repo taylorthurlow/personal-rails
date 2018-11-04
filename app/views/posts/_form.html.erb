@@ -26,6 +26,10 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.text_field :all_tags, placeholder: 'tags' %>
+  </div>
+
   <div class="field monospace">
     <%= f.text_area :contents, placeholder: 'Post body (accepts markdown)', id: 'content_text' %>
   </div>

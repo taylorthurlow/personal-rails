@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 
@@ -6,6 +9,8 @@ class Post < ApplicationRecord
   validates :title, :contents, :slug, presence: true
   validates :slug, uniqueness: true
   validates_format_of :slug, with: /[a-z0-9-]+/i
+
+  scope :tag, ->(name) { joins(:tags).where(tags: { name: name }) }
 
   def generate_markdown_html
     renderer = Redcarpet::Render::HTML.new(prettify: true)
@@ -19,6 +24,16 @@ class Post < ApplicationRecord
       line += ', last updated ' + updated_at.localtime.strftime('%b %e %Y')
     end
     return line
+  end
+
+  def all_tags=(names)
+    self.tags = names.split(',').map do |name|
+      Tag.where(name: name.strip).first_or_create!
+    end
+  end
+
+  def all_tags
+    tags.map(&:name).join(', ')
   end
 
   private

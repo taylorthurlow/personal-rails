@@ -5,7 +5,13 @@ class PostsController < ApplicationController
   responders :flash
 
   def index
-    @posts = Post.order(created_at: :desc).where(published: true).page(params[:page]).per(10)
+    @posts = Post.joins(:tags)
+                 .distinct
+                 .order(created_at: :desc)
+                 .where(published: true)
+                 .page(params[:page])
+                 .per(10)
+    @posts = @posts.tag(params[:tag]) if params[:tag]
     respond_with @posts
   end
 
@@ -57,6 +63,6 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :slug, :contents, :published)
+    params.require(:post).permit(:title, :slug, :contents, :published, :all_tags)
   end
 end

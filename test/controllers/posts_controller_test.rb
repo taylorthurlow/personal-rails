@@ -9,7 +9,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get posts_url
     assert_response :success
-    assert_not_nil assigns(:posts)
+    assert_equal 2, assigns(:posts).count
+  end
+
+  test 'should get index with tag' do
+    get posts_url, params: { tag: 'tag1' }
+    assert_response :success
+    assert_equal 1, assigns(:posts).count
   end
 
   test 'should get archive' do
