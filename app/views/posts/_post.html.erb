@@ -2,10 +2,11 @@
 
 <div class="">
   <div class="text-center"><h2 class="text-5xl mb-6"><%= post.title %></h2></div>
-  <div class="text-center font-serif mb-6 text-grey-dark">
+  <div class="text-center font-serif text-grey-dark mb-6 flex flex-wrap justify-center">
     <% post.tags.sort_by(&:name).each do |tag| %>
-      <%= link_to tag.name, posts_path(tag: tag.name), class: 'no-underline text-grey-dark' %>
-      <%= '&nbsp;&nbsp;&nbsp;'.html_safe unless tag == post.tags.last %>
+      <div class="mx-4 mb-2">
+        <%= link_to tag.name, posts_path(tag: tag.name), class: 'no-underline text-grey-dark' %>
+      </div>
     <% end %>
   </div>
   <div class="text-center font-serif mb-6"><%= post.date_line %></div>
