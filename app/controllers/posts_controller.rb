@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   responders :flash
 
   def index
-    @posts = Post.joins(:tags)
+    @posts = Post.includes(:tags)
                  .distinct
                  .order(created_at: :desc)
                  .where(published: true)
