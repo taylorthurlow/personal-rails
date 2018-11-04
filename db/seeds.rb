@@ -23,9 +23,14 @@ Login.create!({
   password: 'admin'
 })
 
-Post.create!({
+p = Post.create!({
   title: 'This Is a Random Post, Right?',
   published: true,
   slug: 'some-clever-post-slug',
   contents: lorem_ipsum
 })
+
+Tagging.create!(
+  post: p,
+  tag: Tag.create!(name: 'sometag')
+)
