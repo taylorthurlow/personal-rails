@@ -2,6 +2,13 @@
 
 <p id="notice"><%= notice %></p>
 
+<% if @tag %>
+  <div class="text-center mb-6 text-2xl">
+    Viewing posts tagged '<%= @tag %>'
+  </div>
+  <div class="bg-purple-dark opacity-25 w-full h-px mb-6"></div>
+<% end %>
+
 <div>
   <% @posts.each do |post| %>
     <div class="pb-5">

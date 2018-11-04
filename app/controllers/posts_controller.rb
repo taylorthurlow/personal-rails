@@ -11,7 +11,10 @@ class PostsController < ApplicationController
                  .where(published: true)
                  .page(params[:page])
                  .per(10)
-    @posts = @posts.tag(params[:tag]) if params[:tag]
+    if params[:tag]
+      @posts = @posts.tag(params[:tag])
+      @tag = params[:tag]
+    end
     respond_with @posts
   end
 
