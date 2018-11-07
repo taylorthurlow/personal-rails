@@ -43,6 +43,26 @@ button[type=password] {
 	@apply w-full;
 }
 
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  @apply font-sans p-2 rounded-sm bg-grey-darkest text-center text-grey-lightest absolute z-10;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *

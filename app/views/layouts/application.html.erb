@@ -19,9 +19,15 @@
         <div>
           <%= link_to image_tag('logo-128.png'), root_url %>
           <div id="sidebar-social" class="text-grey p-10">
-            <%= link_to '', 'https://github.com/taylorthurlow', class: 'text-black fa fa-github-alt', target: '_blank' %>
-            <%= link_to '', portfolio_path, class: 'text-black fa fa-paint-brush ml-4' %>
-            <%= link_to '', '/files/resume.pdf', class: 'text-black fa fa-file ml-4', target: '_blank' %>
+            <%= link_to 'https://github.com/taylorthurlow', class: 'text-black fa fa-github-alt tooltip', target: '_blank' do %>
+              <span class="tooltiptext">GitHub</span>
+            <% end %>
+            <%= link_to portfolio_path, class: 'text-black fa fa-paint-brush ml-4 tooltip' do %>
+              <span class="tooltiptext">Portfolio</span>
+            <% end %>
+            <%= link_to '/files/resume.pdf', class: 'text-black fa fa-file ml-4 tooltip', target: '_blank' do %>
+              <span class="tooltiptext">Resume</span>
+            <% end %>
           </div>
         </div>
 
