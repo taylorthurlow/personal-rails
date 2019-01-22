@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_11_04_063813) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
+  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 2018_11_04_063813) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "logins", force: :cascade do |t|
+  create_table "logins", id: :serial, force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", id: :serial, force: :cascade do |t|
     t.text "title"
     t.text "contents"
     t.datetime "created_at", null: false
