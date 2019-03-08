@@ -124,7 +124,7 @@ body {
     a {
       color: $color_3;
 
-      &:not(first-child) {
+      &:not(:first-child) {
         margin-left: 1rem;
       }
     }
