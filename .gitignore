@@ -12,6 +12,7 @@
 /log
 /tmp
 .byebug_history
+tags
 
 # bundler
 /vendor
