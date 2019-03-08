@@ -6,7 +6,6 @@ require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/console'
 require 'capistrano/sitemap_generator'
-require 'capistrano/yarn'
 
 require 'capistrano/puma'
 install_plugin Capistrano::Puma

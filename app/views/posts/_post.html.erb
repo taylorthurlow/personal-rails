@@ -1,23 +1,29 @@
 <% title post.title %>
 
-<div class="">
-  <div class="text-center"><h2 class="text-5xl mb-6"><%= post.title %></h2></div>
-  <div class="text-center font-serif text-grey-dark mb-6 flex flex-wrap justify-center">
+<div class="post">
+  <div class="post-title"><h2><%= post.title %></h2></div>
+  <div class="post-tags">
     <% post.tags.sort_by(&:name).each do |tag| %>
-      <div class="mx-4 mb-2">
-        <%= link_to tag.name, posts_path(tag: tag.name), class: 'no-underline text-grey-dark' %>
+      <div class="post-tag">
+        <%= link_to tag.name, posts_path(tag: tag.name) %>
       </div>
     <% end %>
   </div>
-  <div class="text-center font-serif mb-6"><%= post.date_line %></div>
-  <div class="bg-purple-dark opacity-25 w-full h-px mb-6"></div>
+  <div class="post-date"><%= post.date_line %></div>
+  <div class="post-buttons"></div>
     <% if authenticated? %>
       <%= link_to '', edit_post_url(post), class: "fa fa-pencil" %>
       <%= link_to '', post_url(post), method: :delete, class: "fa fa-trash", data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
 
-  <div id="post-content" class="leading-tight">
+  <div class="post-content">
     <%= post.generate_markdown_html.html_safe %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    PR.prettyPrint();
+  });
+</script>

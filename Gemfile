@@ -1,50 +1,46 @@
 source 'https://rubygems.org'
 
-gem 'bcrypt'          # Use ActiveModel has_secure_password
-gem 'bootsnap'        # faster server loading
-gem 'coffee-rails'    # Use CoffeeScript for .coffee assets and views
-gem 'font-awesome-rails'          # cool icons
-gem 'friendly_id'    # nice URL slugs
-gem 'jquery-rails'                # Use jquery as the JavaScript library
-gem 'kaminari'                    # pagination
-gem 'pg'                  # use postgresql as main database
-gem 'puma'                          # multithreaded webserver
-gem 'rails', '5.2.1'              # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'redcarpet'                   # markdown
-gem 'responders'                  # DRYer controller responses
-gem 'sassc-rails'        # Use SCSS for stylesheets (deprecated, see sass/sassc-rails#105)
-gem 'sitemap_generator'           # sitemap for SEO
-gem 'tailwindcss'
-gem 'turbolinks'                  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'uglifier'       # Use Uglifier as compressor for JavaScript assets
-gem 'webpacker'       # js dependencies
+gem 'bcrypt'
+gem 'bootsnap'
+gem 'font-awesome-rails'
+gem 'friendly_id'
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'normalize-rails'
+gem 'pg'
+gem 'puma'
+gem 'rails', '5.2.1'
+gem 'redcarpet'
+gem 'responders'
+gem 'sassc-rails'
+gem 'sitemap_generator'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development do
-  gem 'better_errors'                               # better error pages
-  gem 'capistrano'                    # Use Capistrano for deployment
-  gem 'capistrano-ext'
+  gem 'better_errors'
+  gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-rbenv'
-  gem 'capistrano-yarn'
   gem 'capistrano3-puma'
   gem 'rubocop'
-  gem 'spring'                                      # speeds up development by keeping your application running in the background
-  gem 'web-console'                      # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'spring'
+  gem 'web-console'
 end
 
 group :test do
   gem 'mocha'
-  gem 'rails-controller-testing'          # allow old rails testing stuff
-  gem 'simplecov', require: false                   # generate test coverage reports
+  gem 'rails-controller-testing'
+  gem 'simplecov', require: false
 end
 
 group :development, :test do
   gem 'binding_of_caller'
-  gem 'guard'                     # Make tests auto-run when changing files
+  gem 'guard'
   gem 'guard-livereload', require: false
   gem 'guard-minitest'
-  gem 'pry-rails'                    # debugger
+  gem 'pry-rails'
   gem 'pry-byebug'
-  gem 'rails_real_favicon'        # favicons for all platforms
+  gem 'rails_real_favicon'
 end

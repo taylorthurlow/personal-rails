@@ -1,22 +1,24 @@
 <% title 'Portfolio' %>
 
-<div class="flex flex-col">
-  <div class="mb-10">
-    <div class="text-center mb-4">
-      <%= image_tag 'portfolio/ceremony-media.jpg', class: 'shadow-md rounded-sm' %>
+<div id="portfolio">
+  <div class="portfolio-entry">
+    <div class="portfolio-entry-image">
+      <%= image_tag 'portfolio/ceremony-media.jpg' %>
     </div>
     <div class="portfolio-entry-text">
-      <h3 class="text-3xl mb-2">Ceremony Media</h3>
+      <h3>Ceremony Media</h3>
       <p>Ceremony Media is a media organization tool for organizing funeral presentations. Families can upload videos, photos, and music, and arrange them into a presentation format. Built with Ruby on Rails and Javascript.</p>
     </div>
   </div>
+
   <hr />
-  <div class="mb-10">
-    <div class="text-center mb-4">
-      <%= image_tag 'portfolio/panda-motd.png', class: 'shadow-md rounded-sm' %>
+
+  <div class="portfolio-entry">
+    <div class="portfolio-entry-image">
+      <%= image_tag 'portfolio/panda-motd.png' %>
     </div>
     <div class="portfolio-entry-text">
-      <h3 class="text-3xl mb-2">panda-motd</h3>
+      <h3>panda-motd</h3>
       <p>panda-motd is a utility for generating a more useful MOTD (message-of-the-day) on Linux-based operating systems. The utility is highly configurable, and can track things such as service status, SSL certificate expiration, filesystem usage, and uptime. The project is licensed under the MIT license. panda-motd is written in pure Ruby. You can find the project on Github, <a href="https://github.com/taylorthurlow/panda-motd">here</a>.</p>
     </div>
   </div>

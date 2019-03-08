@@ -1,23 +1,21 @@
 <% title 'Blog' %>
 
-<p id="notice"><%= notice %></p>
-
 <% if @tag %>
-  <div class="text-center mb-6 text-2xl">
+  <div class="post-tag-header">
     Viewing posts tagged '<%= @tag %>'
   </div>
-  <div class="bg-purple-dark opacity-25 w-full h-px mb-6"></div>
+  <div class="post-separator"></div>
 <% end %>
 
-<div>
+<div id="post-index">
   <% @posts.each do |post| %>
-    <div class="pb-5">
-      <h2 class="text-3xl mb-2"><%= link_to post.title, post_url(post), class: 'text-grey-darkest' %></h2>
-      <div class="mb-4"><%= post.date_line %></div>
+    <div class="post-index-entry">
+      <h2><%= link_to post.title, post_url(post) %></h2>
+      <div class="post-index-entry-date"><%= post.date_line %></div>
     </div>
   <% end %>
 </div>
 
-<div class="text-center">
+<div id="post-pages">
   <%= paginate @posts %>
 </div>

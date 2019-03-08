@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<% content_for :header_text do %>
-  Post Archive
-<% end %>
+<h2>Post Archive</h2>
 
 <table id="post-archive" class="border-collapse">
   <thead>
@@ -14,10 +10,10 @@
 
   <% @posts.each do |post| %>
     <tr>
-      <td class="text-center"><%= post.published ? '✓' : '' %></td>
+      <td style="text-align: center;"><%= post.published ? '✓' : '' %></td>
       <td><%= link_to post.title, post_url(post) %></td>
-      <td><%= post.created_at.localtime.strftime('%m/%e/%y') %></td>
-      <td><%= post.updated_at.localtime.strftime('%m/%e/%y') %></td>
+      <td><%= post.created_at.localtime.strftime('%m/%d/%y') %></td>
+      <td><%= post.updated_at.localtime.strftime('%m/%d/%y') %></td>
     </tr>
   <% end %>
 </table>

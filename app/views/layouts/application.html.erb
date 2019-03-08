@@ -8,31 +8,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'prettify_tomorrow_night', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_pack_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-    <script src='//unpkg.com/code-prettify@latest/src/prettify.js'></script>
+    <%= javascript_include_tag '//unpkg.com/code-prettify@latest/src/prettify.js' %>
     <meta name="google-site-verification" content="AyBIEFPOS1aXznunaI8SoQV9VjUr8LgiK69PBYLJ5Lo" />
   </head>
-  <body class="bg-grey-lightest text-grey-darkest font-sans">
-    <div id="container" class="flex flex-col lg:flex-row">
-      <div id="sidebar" class="flex flex-col bg-grey-lighter text-center px-4 py-6 lg:static lg:justify-between lg:w-128 lg:h-screen lg:sticky lg:pin-l lg:pin-t">
+  <body>
+    <div id="container">
+      <div id="sidebar">
         <div>
           <%= link_to image_tag('logo-128.png'), root_url %>
-          <div id="sidebar-social" class="text-grey p-10">
-            <%= link_to 'https://github.com/taylorthurlow', class: 'text-black fa fa-github-alt tooltip', target: '_blank' do %>
-              <span class="tooltiptext">GitHub</span>
-            <% end %>
-            <%= link_to portfolio_path, class: 'text-black fa fa-paint-brush ml-4 tooltip' do %>
-              <span class="tooltiptext">Portfolio</span>
-            <% end %>
-            <%= link_to '/files/resume.pdf', class: 'text-black fa fa-file ml-4 tooltip', target: '_blank' do %>
-              <span class="tooltiptext">Resume</span>
-            <% end %>
+          <div id="sidebar-social">
+            <%= link_to '', 'https://github.com/taylorthurlow', class: 'fa fa-github-alt' %>
+            <%= link_to '', portfolio_path, class: 'fa fa-paint-brush' %>
+            <%= link_to '', '/files/resume.pdf', class: 'fa fa-file' %>
           </div>
         </div>
 
         <div id="sidebar-footer">
-          <p class="text-grey"><%= link_to "&copy;".html_safe, new_session_url, class: 'text-grey' %><%= Time.now.year %> Taylor Thurlow</p>
+          <p><%= link_to "&copy;".html_safe, new_session_url %><%= Time.now.year %> Taylor Thurlow</p>
           <% if authenticated? %>
             <p>
               <%= link_to '', new_post_path, class: "fa fa-pencil" %>
@@ -42,15 +34,13 @@
           <% end %>
         </div>
       </div>
-      <div id="content" class="p-6 mx-auto max-w-full md:text-lg md:max-w-lg md:min-h-screen lg:mt-4">
+      <div id="content">
+        <% if notice %>
+          <p id="notice"><%= notice %></p>
+        <% end %>
+
         <%= yield %>
       </div>
     </div>
   </body>
 </html>
-
-<script>
-  $(document).ready(function() {
-    PR.prettyPrint();
-  });
-</script>
