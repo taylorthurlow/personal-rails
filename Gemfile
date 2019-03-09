@@ -40,7 +40,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-livereload', require: false
   gem 'guard-minitest'
-  gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'rails_real_favicon'
 end
