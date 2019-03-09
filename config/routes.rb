@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  # static pages
-  controller :static_pages do
-    get 'portfolio'
-  end
-
   # archive
   resources :posts
   controller :posts do
@@ -16,6 +11,11 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   controller :sessions do
     get 'destroy', as: 'logout'
+  end
+
+  resources :projects, except: [:show]
+  controller :projects do
+    get 'portfolio', action: :index
   end
 
   resources :logins, except: [:show]

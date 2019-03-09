@@ -1,0 +1,18 @@
+<div id="portfolio">
+  <% @projects.each do |project| %>
+    <div class="portfolio-entry">
+      <div class="portfolio-entry-image">
+        <%= image_tag url_for(project.image) %>
+      </div>
+      <div class="portfolio-entry-text">
+        <% if project.url.present? %>
+          <h3><%= link_to project.name, project.url %></h3>
+        <% else %>
+          <h3><%= project.name %></h3>
+        <% end %>
+        <p><%= project.description.html_safe %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+

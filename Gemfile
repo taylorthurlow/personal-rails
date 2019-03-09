@@ -12,6 +12,7 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redcarpet'
 gem 'responders'
+gem 'sass-rails', require: false # fixes https://github.com/sass/sassc-rails/issues/74
 gem 'sassc-rails'
 gem 'sitemap_generator'
 gem 'turbolinks'
