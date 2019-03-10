@@ -117,12 +117,35 @@ body {
     top: 0;
   }
 
+  &-name {
+    font-family: Eczar;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  &-tagline {
+    font-family: Eczar;
+    padding: 1rem 0 4rem;
+  }
+
   &-social {
+    display: flex;
+    font-family: Eczar;
+    text-transform: uppercase;
+    justify-content: center;
     color: lighten($color_3, 8);
-    padding: 2.5rem;
+    padding: 1rem 4rem 1rem;
+
+    .social-link {
+      padding: 0 1rem;
+
+      @media #{$size-lg} {
+        padding: 0.25rem 0.5rem;
+      }
+    }
 
     a {
-      color: $color_3;
+      color: lighten($color_3, 8);
 
       &:not(:first-child) {
         margin-left: 1rem;

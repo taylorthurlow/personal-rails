@@ -16,10 +16,12 @@
       <div id="sidebar">
         <div>
           <%= link_to image_tag('logo-128.png'), root_url %>
+          <div id="sidebar-name">Taylor Thurlow</div>
+          <div id="sidebar-tagline">web developer, rubyist</div>
           <div id="sidebar-social">
-            <%= link_to '', 'https://github.com/taylorthurlow', class: 'fa fa-github-alt' %>
-            <%= link_to '', portfolio_path, class: 'fa fa-paint-brush' %>
-            <%= link_to '', '/files/resume.pdf', class: 'fa fa-file' %>
+            <div class="social-link"><%= link_to 'GitHub', 'https://github.com/taylorthurlow' %></div>
+            <div class="social-link"><%= link_to 'Projects', projects_path %></div>
+            <div class="social-link"><%= link_to 'Résumé', '/files/resume.pdf' %></div>
           </div>
         </div>
 
