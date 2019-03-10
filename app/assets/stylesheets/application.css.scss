@@ -108,6 +108,10 @@ body {
   text-align: center;
   padding: 1.5rem 1rem;
 
+  .logo {
+    opacity: 0.8;
+  }
+
   @media #{$size-lg} {
     justify-content: space-between;
     width: 20rem;
@@ -180,17 +184,34 @@ body {
 
 #post-index {
   .post-index-entry {
-    padding-bottom: 1.25rem;
+    display: flex;
+    padding-bottom: 2rem;
 
-    h2 {
-      font-family: Eczar, serif;
-      line-height: 1.25;
-      font-size: 1.875rem;
-      margin-bottom: 0.5rem;
-      margin-top: 0;
+    &-left {
+      flex-shrink: 0;
+      margin-right: 1rem;
 
-      a {
-        color: $color_3;
+      img {
+        width: 5rem;
+        border-radius: 0.25rem;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08),
+                    0 1px 8px 0 rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    &-right {
+      padding-top: 0.25rem;
+
+      h2 {
+        font-family: Eczar, serif;
+        line-height: 1.25;
+        font-size: 1.875rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+
+        a {
+          color: $color_3;
+        }
       }
     }
 
