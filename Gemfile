@@ -28,6 +28,8 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano3-puma'
   gem 'rubocop'
+  gem 'rufo'
+  gem 'solargraph'
   gem 'spring'
   gem 'web-console'
 end
