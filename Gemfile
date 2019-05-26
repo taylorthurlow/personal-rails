@@ -11,7 +11,7 @@ gem "mini_magick"
 gem "normalize-rails"
 gem "pg"
 gem "puma"
-gem "rails", "5.2.3"
+gem "rails", "6.0.0.rc1"
 gem "redcarpet"
 gem "responders"
 gem "sass-rails", require: false # fixes https://github.com/sass/sassc-rails/issues/74
