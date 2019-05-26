@@ -36,6 +36,7 @@ install:
   - bundle install
 
 script:
+  - bundle exec bin/webpack
   - bundle exec rake
 
 after_script:
