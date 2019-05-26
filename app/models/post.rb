@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   # validation
   validates :title, :contents, :slug, presence: true
   validates :slug, uniqueness: true
-  validates_format_of :slug, with: /[a-z0-9-]+/i
+  validates_format_of :slug, with: /\A[a-z0-9-]+\z/
 
   scope :tag, ->(name) { joins(:tags).where(tags: { name: name }) }
 
@@ -33,11 +33,5 @@ class Post < ApplicationRecord
 
   def all_tags
     tags.map(&:name).join(", ")
-  end
-
-  private
-
-  def updated?
-    (updated_at - created_at) > 1.day
   end
 end

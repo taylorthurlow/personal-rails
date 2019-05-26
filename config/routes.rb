@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   # archive
   resources :posts
   controller :posts do
+    post "markdown"
+  end
+
+  controller :posts do
     get "archive", as: "archive"
-    post "posts/markdown"
   end
 
   # sessions

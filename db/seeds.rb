@@ -20,10 +20,10 @@ end
 
 Login.create!({
   username: "taylor",
-  password: "admin",
+  password: "password",
 })
 
-p = Post.create!({
+post = Post.create!({
   title: "This Is a Random Post, Right?",
   published: true,
   slug: "some-clever-post-slug",
@@ -31,6 +31,6 @@ p = Post.create!({
 })
 
 Tagging.create!(
-  post: p,
+  post: post,
   tag: Tag.create!(name: "sometag"),
 )

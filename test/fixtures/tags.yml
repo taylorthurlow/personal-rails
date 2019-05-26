@@ -1,7 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-tag_one:
-  name: tag1
-
-tag_two:
-  name: tag2

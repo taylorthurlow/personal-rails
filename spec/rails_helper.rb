@@ -73,8 +73,15 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.include FactoryBot::Syntax::Methods
+  config.before { Faker::UniqueGenerator.clear }
 
-  config.before(type: :system) { driven_by :rack_test }
-  config.before(type: :system, js: true) { driven_by :selenium_chrome_headless }
+  config.before(type: :system) do
+    driven_by :rack_test
+    Capybara.server = :puma, { Silent: true }
+  end
+
+  config.before(type: :system, js: true) do
+    browser = ENV["DISABLE_HEADLESS"] ? :chrome : :headless_chrome
+    driven_by :selenium, using: browser, screen_size: [1400, 900]
+  end
 end
