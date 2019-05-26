@@ -37,17 +37,22 @@ group :development do
 end
 
 group :test do
-  gem "mocha"
-  gem "rails-controller-testing"
+  gem "capybara"
+  gem "selenium-webdriver"
   gem "simplecov", require: false
+  gem "webdrivers"
+  gem "webmock"
 end
 
 group :development, :test do
   gem "binding_of_caller"
+  gem "factory_bot_rails"
+  gem "faker"
   gem "guard"
   gem "guard-livereload", require: false
-  gem "guard-minitest"
+  gem "guard-rspec"
   gem "pry-byebug"
   gem "pry-rails"
   gem "rails_real_favicon"
+  gem "rspec-rails"
 end
