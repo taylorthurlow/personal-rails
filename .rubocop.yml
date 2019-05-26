@@ -1,31 +1,57 @@
 AllCops:
+  TargetRubyVersion: 2.6
   Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'vendor/**/*'
     - '.circleci/**/*'
-    - 'tmp/**/*'
-    - 'script/**/*'
-    - 'bin/**/*'
     - 'app/assets/bower_components/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
 
-Metrics/LineLength:
-  Enabled: false
-
-Style/RedundantReturn:
+Layout:
   Enabled: false
 
 Metrics/ClassLength:
   Max: 200
   Exclude:
-    - 'test/**/*'
+    - 'spec/**/*'
 
 Metrics/MethodLength:
   Max: 25
 
 Metrics/BlockLength:
   Exclude:
-    - 'test/**/*'
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 80
+  IgnoredPatterns: ['#[^\{\n]+$'] # ignore end of line comments
+  Exclude:
+    - 'Guardfile'
+
+Documentation:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  Enabled: false
 
 Style/SymbolArray:
   Enabled: false
@@ -33,29 +59,17 @@ Style/SymbolArray:
 Style/WordArray:
   Enabled: false
 
-Documentation:
-  Enabled: false
-
-Metrics/AbcSize:
-  Max: 30
-
-Metrics/CyclomaticComplexity:
-  Max: 10
-
-Style/Lambda:
-  EnforcedStyle: literal
-
 Style/ClassAndModuleChildren:
-  Enabled: false
-
-Style/NumericLiterals:
   Enabled: false
 
 Style/StructInheritance:
   Enabled: false
 
-Style/EmptyMethod:
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/GuardClause:
   Enabled: false
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
