@@ -14,11 +14,11 @@ gem "puma"
 gem "rails", "6.0.0.rc1"
 gem "redcarpet"
 gem "responders"
-gem "sass-rails", require: false # fixes https://github.com/sass/sassc-rails/issues/74
 gem "sassc-rails"
 gem "sitemap_generator"
 gem "turbolinks"
 gem "uglifier"
+gem "webpacker"
 
 group :development do
   gem "better_errors"
@@ -27,10 +27,12 @@ group :development do
   gem "capistrano-rails-console", require: false
   gem "capistrano-rbenv"
   gem "capistrano3-puma"
+  gem "listen"
   gem "rubocop"
   gem "rufo"
   gem "solargraph"
   gem "spring"
+  gem "spring-watcher-listen"
   gem "web-console"
 end
 
