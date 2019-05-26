@@ -20,19 +20,19 @@ class Post < ApplicationRecord
   end
 
   def date_line
-    line = 'posted ' + created_at.localtime.strftime('%b %e %Y')
-    line += ', last updated ' + last_updated.strftime('%b %e %Y') if last_updated
+    line = "posted " + created_at.localtime.strftime("%b %e %Y")
+    line += ", last updated " + last_updated.strftime("%b %e %Y") if last_updated
     line
   end
 
   def all_tags=(names)
-    self.tags = names.split(',').map do |name|
+    self.tags = names.split(",").map do |name|
       Tag.where(name: name.strip).first_or_create!
     end
   end
 
   def all_tags
-    tags.map(&:name).join(', ')
+    tags.map(&:name).join(", ")
   end
 
   private

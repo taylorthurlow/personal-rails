@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def lorem_ipsum
-  return 'Lorem ipsum dolor sit amet, quot labores maiestatis vel in, te mucius animal aliquam sit. Sonet melius eum et. Vel ut vituperata argumentum, ut agam fuisset his, eu eum unum deseruisse contentiones. Vim suas deserunt et. Te eum odio audiam integre. In usu detracto sapientem, te magna epicuri nostrum ius.
+  return "Lorem ipsum dolor sit amet, quot labores maiestatis vel in, te mucius animal aliquam sit. Sonet melius eum et. Vel ut vituperata argumentum, ut agam fuisset his, eu eum unum deseruisse contentiones. Vim suas deserunt et. Te eum odio audiam integre. In usu detracto sapientem, te magna epicuri nostrum ius.
 
     His purto eruditi cu, ex diam inani sadipscing vis. Te pri error melius lobortis, ea iisque gloriatur nec. Id his lorem tincidunt, ut per ridens referrentur intellegebat. Eum in atqui liberavisse, quo in errem legere. Cu erroribus expetendis scripserit nec, qui aeterno aliquip eu, vis ex aeque admodum.
 
@@ -15,22 +15,22 @@ def lorem_ipsum
 
     Mea ea detracto nominati eleifend, sea ea quas clita, cu commune sadipscing sed. At sea viris volutpat qualisque, constituam appellantur philosophia te eos. An audiam constituam instructior usu, latine accumsan ut nam, dolorum intellegat interpretaris his ut. Pri ad probatus constituam, esse sanctus mea et. Ei sea ferri possim maiestatis, errem corrumpit ad mei. Nec dicam nemore eu.
 
-    Euismod sanctus vulputate eum ad. Mea harum dicant no, movet praesent nam ut. In munere integre constituto pro, pro eu harum dolores necessitatibus. An per nemore quaeque tibique. Ea nisl partem mollis eam, sit simul salutatus neglegentur ut. Vel vocibus vulputate te.'
+    Euismod sanctus vulputate eum ad. Mea harum dicant no, movet praesent nam ut. In munere integre constituto pro, pro eu harum dolores necessitatibus. An per nemore quaeque tibique. Ea nisl partem mollis eam, sit simul salutatus neglegentur ut. Vel vocibus vulputate te."
 end
 
 Login.create!({
-  username: 'taylor',
-  password: 'admin'
+  username: "taylor",
+  password: "admin",
 })
 
 p = Post.create!({
-  title: 'This Is a Random Post, Right?',
+  title: "This Is a Random Post, Right?",
   published: true,
-  slug: 'some-clever-post-slug',
-  contents: lorem_ipsum
+  slug: "some-clever-post-slug",
+  contents: lorem_ipsum,
 })
 
 Tagging.create!(
   post: p,
-  tag: Tag.create!(name: 'sometag')
+  tag: Tag.create!(name: "sometag"),
 )
