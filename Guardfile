@@ -1,24 +1,86 @@
-guard "livereload" do
-  watch(%r{app/.+\.(erb|haml|css)$})
-  watch(%r{public/.+\.(css|js|html)})
-  watch(%r{test/.+\.(js)})
-  watch(%r{config/locales/.+\.yml})
-  # Rails Assets Pipeline
-  watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
+# frozen_string_literal: true
+
+# Note: The cmd option is now required due to the increasing number of ways
+#       rspec may be run, below are examples of the most common uses.
+#  * bundler: 'bundle exec rspec'
+#  * bundler binstubs: 'bin/rspec'
+#  * spring: 'bin/rspec' (This will use spring if running and you have
+#                          installed the spring binstubs per the docs)
+#  * zeus: 'zeus rspec' (requires the server to be started separately)
+#  * 'just' rspec: 'rspec'
+
+guard :rspec, cmd: "bundle exec rspec", all_on_start: false, env: { "NO_COVERAGE" => "true" } do
+  require "guard/rspec/dsl"
+
+  dsl = Guard::RSpec::Dsl.new(self)
+
+  # RSpec files
+  rspec = dsl.rspec
+  watch(rspec.spec_helper) { rspec.spec_dir }
+  watch(rspec.spec_support) { rspec.spec_dir }
+  watch(rspec.spec_files)
+
+  # Ruby files
+  ruby = dsl.ruby
+  dsl.watch_spec_files_for(ruby.lib_files)
+
+  # Rails files
+  rails = dsl.rails(view_extensions: %w[erb haml slim])
+  dsl.watch_spec_files_for(rails.app_files)
+  dsl.watch_spec_files_for(rails.views)
+
+  watch(rails.controllers) do |m|
+    [
+      rspec.spec.call("routing/#{m[1]}_routing"),
+      rspec.spec.call("request/#{m[1]}_requests"),
+    ]
+  end
+
+  # Rails config changes
+  watch(rails.spec_helper) { rspec.spec_dir }
+  watch(rails.routes) { "#{rspec.spec_dir}/routing" }
+  watch(rails.app_controller) { "#{rspec.spec_dir}/requests" }
+
+  # Capybara features specs
+  watch(rails.view_dirs) { |m| rspec.spec.call("system/#{m[1]}") }
+  watch(rails.layouts) { |m| rspec.spec.call("system/#{m[1]}") }
 end
 
-guard :minitest, all_on_start: false, env: { "NO_COVERAGE" => "true" } do
-  watch(%r{^app/controllers/application_controller\.rb$}) { "test/controllers" }
-  watch(%r{^lib/(.+)\.rb$}) { |m| "test/lib/#{m[1]}_test.rb" }
-  watch(%r{^test/.+_test\.rb$})
-  watch(%r{^test/test_helper\.rb$}) { "test" }
-  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
-  watch(%r{^lib/(.*/)?([^/]+)\.rb$}) { |m| "test/#{m[1]}test_#{m[2]}.rb" }
+guard :livereload do
+  extensions = {
+    css: :css,
+    scss: :css,
+    sass: :css,
+    js: :js,
+    coffee: :js,
+    html: :html,
+    png: :png,
+    gif: :gif,
+    jpg: :jpg,
+    jpeg: :jpeg,
+  # less: :less, # uncomment if you want LESS stylesheets done in browser
+  }
 
-  # Rails 4
-  watch(%r{^app/controllers/(.+)\.rb}) { |m| "test/controllers/#{m[1]}_test.rb" }
-  watch(%r{^app/services/(.+)\.rb}) { |m| "test/services/#{m[1]}_test.rb" }
-  watch(%r{^app/jobs/(.+)\.rb}) { |m| "test/jobs/#{m[1]}_test.rb" }
-  watch(%r{^app/views/(.+)\.rb}) { |m| "test/controllers/#{m[1]}_test.rb" }
-  watch(%r{^app/models/(.+)\.rb}) { |m| "test/models/#{m[1]}_test.rb" }
+  rails_view_exts = %w[erb haml slim]
+
+  # file types LiveReload may optimize refresh for
+  compiled_exts = extensions.values.uniq
+  watch(%r{public/.+\.(#{compiled_exts * "|"})})
+
+  extensions.each do |ext, type|
+    watch(%r{
+          (?:app|vendor)
+          (?:/assets/\w+/(?<path>[^.]+) # path+base without extension
+           (?<ext>\.#{ext})) # matching extension (must be first encountered)
+          (?:\.\w+|$) # other extensions
+          }x) do |m|
+      path = m[1]
+      "/assets/#{path}.#{type}"
+    end
+  end
+
+  # file needing a full reload of the page anyway
+  watch(%r{app/views/.+\.(#{rails_view_exts * "|"})$})
+  watch(%r{app/helpers/.+\.rb})
+  watch(%r{config/locales/.+\.yml})
 end
