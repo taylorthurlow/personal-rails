@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+gem "ed25519"
+gem "bcrypt_pbkdf"
+
 gem "bcrypt"
 gem "bootsnap"
 gem "font-awesome-rails"
@@ -19,6 +22,7 @@ gem "sitemap_generator"
 gem "turbolinks"
 gem "uglifier"
 gem "webpacker"
+gem "zeitwerk"
 
 group :development do
   gem "better_errors"
