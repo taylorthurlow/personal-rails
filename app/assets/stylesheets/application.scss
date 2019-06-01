@@ -16,15 +16,15 @@
  */
 
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Eczar|Lato|Roboto+Mono');
+@import url("https://fonts.googleapis.com/css?family=Eczar|Lato|Roboto+Mono");
 
 // https://coolors.co/f2e6ec-ccc5b9-403d39-9b7389-511c39
 $color_darkest: #3d4852;
 $color_dark: #fff;
 $color_light: #fff;
 $color_lightest: #f8fafc;
-$color_1: #efece7;
-$color_2: #eae5dc;
+$color_1: #f4f4f4;
+$color_2: #e8e8e8;
 $color_3: #403d39;
 $color_4: #b8c480;
 $color_5: #511c39;
@@ -39,7 +39,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -53,11 +55,14 @@ body {
     text-decoration: none;
   }
 
-  li, p {
+  li,
+  p {
     line-height: 1.5;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-weight: 300;
   }
 
@@ -65,7 +70,9 @@ body {
     max-width: 100%;
   }
 
-  input, textarea, button {
+  input,
+  textarea,
+  button {
     width: 100%;
     border: 2px;
     padding: 0.5rem;
@@ -77,17 +84,17 @@ body {
     height: 300px;
   }
 
-  input[type=text],
-  input[type=password],
-  textarea[type=text],
-  textarea[type=password],
-  button[type=text],
-  button[type=password] {
+  input[type="text"],
+  input[type="password"],
+  textarea[type="text"],
+  textarea[type="password"],
+  button[type="text"],
+  button[type="password"] {
     font-size: 1rem;
   }
 
-  .login_form input[type=text],
-  .login_form input[type=password] {
+  .login_form input[type="text"],
+  .login_form input[type="password"] {
     width: 100%;
   }
 }
@@ -138,6 +145,7 @@ body {
 
   &-social {
     display: flex;
+    flex-direction: column;
     font-family: Eczar;
     text-transform: uppercase;
     justify-content: center;
@@ -152,6 +160,10 @@ body {
       }
     }
 
+    .social-link-separator {
+      line-height: 70%;
+    }
+
     a {
       color: lighten($color_3, 8);
 
@@ -162,7 +174,9 @@ body {
   }
 
   &-footer {
-    &, p, a {
+    &,
+    p,
+    a {
       color: darken($color_2, 16);
     }
   }
@@ -302,23 +316,23 @@ body {
       code.prettyprint {
         font-size: 1rem;
 
-        &[class*='lang-plain'] > span {
+        &[class*="lang-plain"] > span {
           color: #c5c8c6;
         }
       }
     }
 
     code.prettyprint {
-        &:not([class*='lang']) {
-          background-color: darken($color_1, 8);
-          padding: 0.03rem 0.2rem;
-          border-radius: 0.125rem;
+      &:not([class*="lang"]) {
+        background-color: darken($color_1, 8);
+        padding: 0.03rem 0.2rem;
+        border-radius: 0.125rem;
 
-          > span {
-            color: black;
-            font-size: 1rem;
-          }
+        > span {
+          color: black;
+          font-size: 1rem;
         }
+      }
     }
 
     img {
@@ -331,7 +345,9 @@ body {
       line-height: 1.5;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       margin-top: 2rem;
     }
 
@@ -384,7 +400,7 @@ body {
       img {
         border-radius: 0.125rem;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12),
-                    0 2px 4px 0 rgba(0, 0, 0, 0.08);
+          0 2px 4px 0 rgba(0, 0, 0, 0.08);
       }
     }
 
@@ -393,9 +409,9 @@ body {
         font-family: Eczar, serif;
         font-size: 1.875rem;
         margin-bottom: 0.5rem;
-	a {
-	  color: $color_3;
-	}
+        a {
+          color: $color_3;
+        }
       }
     }
   }
