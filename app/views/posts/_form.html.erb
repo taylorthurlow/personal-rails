@@ -56,7 +56,7 @@
     var request = new XMLHttpRequest();
     var raw = document.querySelectorAll("#content_text")[0].value;
     request.open("POST", "/markdown", true);
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+    request.setRequestHeader("Content-Type", "text/plain; charset=UTF-8");
     var csrfToken = document.querySelectorAll('meta[name="csrf-token"]')[0].content;
     request.setRequestHeader('X-CSRF-Token', csrfToken);
 
