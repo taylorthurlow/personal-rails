@@ -6,7 +6,7 @@ set :application, "personal"
 set :user, "rails"
 set :puma_threads, [4, 16]
 set :puma_workers, 0
-set :rbenv_ruby, "2.5.1"
+set :rbenv_ruby, "2.6.3"
 
 # Don't change these unless you know what you're doing
 set :pty, true
