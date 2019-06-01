@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       session[:login_id] = login.id
       redirect_to posts_url
     else
-      redirect_to new_session_url, alert: 'Invalid login/password combination'
+      redirect_to new_session_url, alert: "Invalid login/password combination"
     end
   end
 

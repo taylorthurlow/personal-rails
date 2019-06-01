@@ -53,13 +53,25 @@
 
 <script>
   function markdownPreview() {
-    $.ajax({
-      url: "/posts/markdown",
-      method: "POST",
-      data: $("#content_text").val()
-    }).done(function(data) {
-      $(".post_preview").html('<div class="blog_post"><div class="blog_post_contents">' + data["content"] + '</div></div>');
-      PR.prettyPrint();
-    });
+    var request = new XMLHttpRequest();
+    var raw = document.querySelectorAll("#content_text")[0].value;
+    request.open("POST", "/markdown", true);
+    request.setRequestHeader("Content-Type", "text/plain; charset=UTF-8");
+    var csrfToken = document.querySelectorAll('meta[name="csrf-token"]')[0].content;
+    request.setRequestHeader('X-CSRF-Token', csrfToken);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 300) {
+        var markdown = JSON.parse(request.responseText).content;
+        document.querySelectorAll(".post_preview")[0].innerHTML = '<div class="blog_post"><div class="blog_post_contents">' + markdown + '</div></div>'
+        PR.prettyPrint();
+      }
+    };
+
+    request.onerror = function() {
+      console.error("There was a problem sending the markdown render request.");
+    };
+
+    request.send(raw);
   };
 </script>

@@ -1,9 +1,0 @@
-post_one:
-  title: a title goes here
-  contents: some contents go here
-  slug: post-one
-
-post_two:
-  title: a title goes here
-  contents: some contents go here
-  slug: post-two

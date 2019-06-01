@@ -11,10 +11,12 @@ class PostsController < ApplicationController
                  .where(published: true)
                  .page(params[:page])
                  .per(10)
+
     if params[:tag]
       @posts = @posts.tag(params[:tag])
       @tag = params[:tag]
     end
+
     respond_with @posts
   end
 

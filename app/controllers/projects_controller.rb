@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   def index
     @projects = Project.all
+
+    respond_with @projects
   end
 
   # GET /projects/new
@@ -21,27 +23,20 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = Project.new(project_params)
-
-    if @project.save
-      redirect_to projects_url, notice: 'Project was successfully created.'
-    else
-      render :new
-    end
+    @project.save
+    respond_with @project, location: projects_path
   end
 
   # PATCH/PUT /projects/1
   def update
-    if @project.update(project_params)
-      redirect_to projects_url, notice: 'Project was successfully updated.'
-    else
-      render :edit
-    end
+    @project.update(project_params)
+    respond_with @project
   end
 
   # DELETE /projects/1
   def destroy
     @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    respond_with @project
   end
 
   private

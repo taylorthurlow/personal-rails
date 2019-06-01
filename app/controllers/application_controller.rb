@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
   def authorize
     return if authenticated?
-    redirect_to new_session_url, method: :delete, notice: 'Please log in'
+    redirect_to new_session_url, method: :delete, notice: "Please log in"
   end
 end

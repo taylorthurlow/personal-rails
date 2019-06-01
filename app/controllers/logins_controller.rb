@@ -9,8 +9,13 @@ class LoginsController < ApplicationController
   end
 
   def update
-    @login.update(login_params)
-    respond_with @login
+    if @login.update(login_params)
+      respond_with @login, location: root_path
+    else
+      respond_to do |format|
+        format.html { render plain: "Failed." }
+      end
+    end
   end
 
   def destroy
